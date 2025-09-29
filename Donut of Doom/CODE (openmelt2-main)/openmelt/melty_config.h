@@ -1,3 +1,9 @@
+#include <SparkFun_LIS331.h>
+
+#include <FastIMU.h>
+
+#include <Adafruit_SleepyDog.h>
+
 //This file is intended to include all commonly modified settings for Open Melt
 
 #ifndef MELTY_CONFIG_GUARD  //header guard
@@ -37,15 +43,15 @@
 //Common RC receiver setup LEFTRIGHT = CH1, FORBACK = CH2, THROTTLE = CH3
 //Note: Accelerometer is connected with default Arduino SDA / SCL pins
 
-#define LEFTRIGHT_RC_CHANNEL_PIN 7                //To Left / Right on RC receiver
-#define FORBACK_RC_CHANNEL_PIN 1                  //To Forward / Back on RC receiver (Pin 1 on Arduino Micro labelled as "TX" - https://docs.arduino.cc/hacking/hardware/PinMapping32u4)
+#define LEFTRIGHT_RC_CHANNEL_PIN 4                //To Left / Right on RC receiver
+#define FORBACK_RC_CHANNEL_PIN 5                      //To Forward / Back on RC receiver (Pin 1 on Arduino Micro labelled as "TX" - https://docs.arduino.cc/hacking/hardware/PinMapping32u4)
 #define THROTTLE_RC_CHANNEL_PIN 0                 //To Throttle on RC receiver (Pin 0 on Arduino Micro labelled as "RX" - https://docs.arduino.cc/hacking/hardware/PinMapping32u4)
 
-#define HEADING_LED_PIN	8                         //To heading LED (pin 13 is on-board Arduino LED)
+#define HEADING_LED_PIN	2                         //To heading LED (pin 13 is on-board Arduino LED)
 
 //no configuration changes are needed if only 1 motor is used!
-#define MOTOR_PIN1 9                              //Pin for Motor 1 driver
-#define MOTOR_PIN2 10                             //Pin for Motor 2 driver
+#define MOTOR_PIN1 12                              //Pin for Motor 1 driver
+#define MOTOR_PIN2 14                             //Pin for Motor 2 driver
 
 #define BATTERY_ADC_PIN A0                        //Pin for battery monitor (if enabled)
 

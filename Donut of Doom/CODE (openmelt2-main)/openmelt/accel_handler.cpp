@@ -1,3 +1,11 @@
+#include <dummy.h>
+
+#include <Adafruit_SleepyDog.h>
+
+#include <DNSServer.h>
+
+#include <EEPROM.h>
+
 //this module interfaces with the accelerometer to provide current G-force level
 
 //Two breakout boards using the H3LIS331DL accelerometer have been tested / verified to work

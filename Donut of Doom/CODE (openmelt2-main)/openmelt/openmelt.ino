@@ -1,3 +1,6 @@
+#include <ESP_I2S.h>
+#include <wav_header.h>
+
 //See melty_config.h for configuration parameters
 
 #include "rc_handler.h"
