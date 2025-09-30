@@ -78,7 +78,7 @@ enum throttle_modes {
                         //This mode reduces current levels during spin up at part throttle
 };
 
-#define THROTTLE_TYPE BINARY_THROTTLE      //<---Throttle type set here!
+#define THROTTLE_TYPE FIXED_PWM_THROTTLE      //<---Throttle type set here!
 
 #define DYNAMIC_PWM_MOTOR_ON_PORTION 0.5f       //if defined (and DYNAMIC_PWM_THROTTLE is set) portion of each rotation motor is on is fixed at this value
                                                 //About 0.5f for best translation (higher for increased RPM)
