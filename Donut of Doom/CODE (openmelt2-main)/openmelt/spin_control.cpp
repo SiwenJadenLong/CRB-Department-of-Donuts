@@ -321,5 +321,16 @@ void spin_one_rotation(void) {
     time_spent_this_rotation_us = micros() - start_time;
 
   }
+}
 
+//poorly allows for movement like a normal two wheeled bot - Cai
+void two_wheel_drive(float speed_throttle_percent_scalar){
+  static struct melty_parameters_t melty_parameters = get_melty_parameters();
+
+  if (melty_parameters.translate_forback == RC_FORBACK_FORWARD){
+    motor_1_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
+    motor_2_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
+  } else {
+    motor_1_on(melty_parameters.throttle_percent);
+  }
 }

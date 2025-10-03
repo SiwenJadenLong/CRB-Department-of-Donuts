@@ -177,7 +177,11 @@ void loop() {
   //if RC is good - and throtte is above 0 - spin a single rotation
   if (rc_get_throttle_percent() > 0) {
     //this is where all the motor control happens!  (see spin_control.cpp)
-    spin_one_rotation();  
+    if (true) {
+      two_wheel_drive(0.1f);
+    } else {
+      spin_one_rotation();  
+    }
   } else {    
     handle_bot_idle();
   }
