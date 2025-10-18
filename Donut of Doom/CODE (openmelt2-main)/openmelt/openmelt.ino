@@ -32,6 +32,8 @@ static void wait_for_rc_good_and_zero_throttle() {
       
       //services watchdog and echo diagnostics while we are waiting for RC signal
       service_watchdog();
+      Serial.print("THIS IS THE RC SIGNAL:"); Serial.print(rc_signal_is_healthy());
+      Serial.print("WAIT FOR RC GOOD AND ZERO THROTTLE");
       echo_diagnostics();
   }
 }
@@ -41,6 +43,7 @@ static void wait_for_rc_good_and_zero_throttle() {
 void setup() {
   
   Serial.begin(115200);
+  Serial.print("SETUP IS HAPPENING");
 
   //get motor drivers setup (and off!) first thing
   init_motors();
@@ -171,10 +174,13 @@ void loop() {
     
     //services watchdog and echo diagnostics while we are waiting for RC signal
     service_watchdog();
+    Serial.print("RC SIGNAL IS NOT HEALTHY");
     echo_diagnostics();
   }
 
   //if RC is good - and throtte is above 0 - spin a single rotation
+  Serial.print("WE MADE IT TO THE RC GET THROTTLE PERCENT IF STATEMENT");
+  echo_diagnostics();
   if (rc_get_throttle_percent() > 0) {
     //this is where all the motor control happens!  (see spin_control.cpp)
     if (true) {
