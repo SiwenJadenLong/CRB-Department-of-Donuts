@@ -98,6 +98,7 @@ int rc_get_throttle_percent() {
 
   lock_rc_data();
   unsigned long pulse_length = throttle_rc_channel.pulse_length;
+  Serial.print("PULSE LENGTH OF THROTTLE PERCENT: "); Serial.print(throttle_rc_channel.pulse_length); Serial.print(" | ");
   unlock_rc_data();
 
   if (pulse_length >= FULL_THROTTLE_PULSE_LENGTH) return 100;
@@ -124,6 +125,7 @@ rc_forback rc_get_forback() {
   
   lock_rc_data();
   unsigned long pulse_length = forback_rc_channel.pulse_length;
+  //Serial.print("PULSE LENGTH OF FORBACK: "); Serial.println(forback_rc_channel.pulse_length);
   unlock_rc_data();
 
   int rc_forback_offset = pulse_length - CENTER_FORBACK_PULSE_LENGTH;
