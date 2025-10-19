@@ -179,12 +179,13 @@ void loop() {
   }
 
   //if RC is good - and throtte is above 0 - spin a single rotation
-  Serial.print("WE MADE IT TO THE RC GET THROTTLE PERCENT IF STATEMENT");
-  echo_diagnostics();
+  Serial.println("WE MADE IT TO THE RC GET THROTTLE PERCENT IF STATEMENT");
+  //echo_diagnostics();
+  Serial.println("\n\n\n\n\n\n\n");
   if (rc_get_throttle_percent() > 0) {
     //this is where all the motor control happens!  (see spin_control.cpp)
     if (true) {
-      two_wheel_drive(0.1f);
+      two_wheel_drive(0.5f);
     } else {
       spin_one_rotation();  
     }
