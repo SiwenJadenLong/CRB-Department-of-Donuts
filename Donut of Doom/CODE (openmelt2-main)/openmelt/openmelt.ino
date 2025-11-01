@@ -58,6 +58,7 @@ void setup() {
 #endif
 
   init_rc();
+  delay(2000);
   init_accel();   //accelerometer uses i2c - which can fail blocking (so only initializing it -after- the watchdog is running)
   
 //load settings on boot
@@ -180,6 +181,7 @@ void loop() {
     Serial.print("RC SIGNAL IS NOT HEALTHY");
     echo_diagnostics();
   }
+
 
 
   //if RC is good - and throtte is above 0 - spin a single rotation

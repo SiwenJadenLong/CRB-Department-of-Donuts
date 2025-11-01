@@ -50,14 +50,14 @@
 #define HEADING_LED_PIN	2                         //To heading LED (pin 13 is on-board Arduino LED)
 
 //no configuration changes are needed if only 1 motor is used!
-#define MOTOR_PIN1 12                              //Pin for Motor 1 driver
-#define MOTOR_PIN2 14                             //Pin for Motor 2 driver
+#define MOTOR_PIN1 18                              //Pin for Motor 1 driver
+#define MOTOR_PIN2 19                             //Pin for Motor 2 driver
 
 #define BATTERY_ADC_PIN A0                        //Pin for battery monitor (if enabled)
 
 
 //----------THROTTLE CONFIGURATION----------
-//THROTTLE_TYPE / High-speed PWM motor driver support:
+//THROTTLE_TYPE / High-speed PWM motor driver support: b
 //Setting THROTTLE_TYPE to FIXED_PWM_THROTTLE or DYNAMIC_PWM_THROTTLE pulses 490Hz PWM signal on motor drive pins at specified duty cycle (0-255)
 //Can be used for 2 possible purposes:
 //  1. Used as control signal for a brushless ESC supporting high speed (490Hz) PWM (tested with Hobbypower 30A / "Simonk" firmware)

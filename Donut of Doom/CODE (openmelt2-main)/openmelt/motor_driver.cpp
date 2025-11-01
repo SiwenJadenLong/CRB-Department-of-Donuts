@@ -11,7 +11,7 @@
 Servo esc1;
 Servo esc2;
 
-void motor_on(float throttle_percent, Servo esc) {
+void motor_on(float throttle_percent, Servo esc) { //probably needs to be passed by reference otherwise its copying
 
   if (THROTTLE_TYPE == BINARY_THROTTLE) {
     //digitalWrite(12, HIGH);
@@ -20,7 +20,7 @@ void motor_on(float throttle_percent, Servo esc) {
   if (THROTTLE_TYPE == FIXED_PWM_THROTTLE) {
     //ledcWrite(motor_pin, PWM_MOTOR_ON);
     Serial.println("TRIED TO TURN MOTOR ON");
-    esc.writeMicroseconds(PWM_MOTOR_ON);
+    esc1.writeMicroseconds(2000);
   }
 
 //If DYNAMIC_PWM_THROTTLE - PWM is scaled between PWM_MOTOR_COAST and PWM_MOTOR_ON
@@ -42,7 +42,7 @@ void motor_2_on(float throttle_percent) {
 
 void motor_coast(Servo esc) {
   if (THROTTLE_TYPE == FIXED_PWM_THROTTLE || THROTTLE_TYPE == DYNAMIC_PWM_THROTTLE) {
-    esc.writeMicroseconds(PWM_MOTOR_COAST);
+    esc1.writeMicroseconds(PWM_MOTOR_COAST);
   }
   if (THROTTLE_TYPE == BINARY_THROTTLE) {
     //digitalWrite(motor_pin, LOW);  //same as "off" for brushed motors
@@ -59,7 +59,8 @@ void motor_2_coast() {
 
 void motor_off(Servo esc) {
   if (THROTTLE_TYPE == FIXED_PWM_THROTTLE || THROTTLE_TYPE == DYNAMIC_PWM_THROTTLE) {
-    esc.writeMicroseconds(PWM_MOTOR_OFF);
+    Serial.println("TRIED TO TURN MOTOR OFF");
+    esc1.writeMicroseconds(PWM_MOTOR_OFF);
   }
   if (THROTTLE_TYPE == BINARY_THROTTLE) {
     //digitalWrite(motor_pin, LOW);  //same as "off" for brushed motors
@@ -86,13 +87,18 @@ void motors_off() {
 
 void init_motors() {
   //ledcSetup(0, freq, resolution);
-  esc1.attach(MOTOR_PIN1);
+  esc1.setPeriodHertz(50); // 50 Hz typical for ESCs
+  esc2.setPeriodHertz(50);
+  //esc1.attach(MOTOR_PIN1);
+  Serial.println("INIT MOTORS HAPPENED");
   //escDictionary[MOTOR_PIN1] = esc1;
 
   //ledcSetup(1, freq, resolution);
-  esc2.attach(MOTOR_PIN2);
+  //esc2.attach(MOTOR_PIN2);
   //escDictionary[MOTOR_PIN2] = esc2;
 
+  esc1.attach(MOTOR_PIN1, 1000, 2000); // channel 4, timer 3
+  esc2.attach(MOTOR_PIN2, 1000, 2000); // channel 5, timer 3
 
   //pinMode(MOTOR_PIN1, OUTPUT);
   //pinMode(MOTOR_PIN2, OUTPUT);
