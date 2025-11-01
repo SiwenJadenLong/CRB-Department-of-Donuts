@@ -23,16 +23,16 @@ bool rc_get_is_lr_in_normal_deadzone();
 //it's accepted that a TX with fully centered trims may produce values somewhat off these numbers
 
 //RC pulses outside this range are considered invalid (indicate a bad RC signal)
-#define MAX_RC_PULSE_LENGTH 2000
-#define MIN_RC_PULSE_LENGTH 1000
+#define MAX_RC_PULSE_LENGTH 2400
+#define MIN_RC_PULSE_LENGTH 700
 
 //This value reflects nominal range of possible RC pulse values (maximum - minimum)
 //This value is used to help scale left / right adjustment of heading
 //(does not need to be perfect)
 #define NOMINAL_PULSE_RANGE (MAX_RC_PULSE_LENGTH - MIN_RC_PULSE_LENGTH)
 
-#define IDLE_THROTTLE_PULSE_LENGTH 1250           //pulses below this value are considered 0% throttle
-#define FULL_THROTTLE_PULSE_LENGTH 1850           //pulses above this value are considered 100%
+#define IDLE_THROTTLE_PULSE_LENGTH 1000          //pulses below this value are considered 0% throttle
+#define FULL_THROTTLE_PULSE_LENGTH 2000           //pulses above this value are considered 100%
 #define CENTER_LEFTRIGHT_PULSE_LENGTH 1500        //center value for left / right
 #define CENTER_FORBACK_PULSE_LENGTH 1500          //center value for for / back
 

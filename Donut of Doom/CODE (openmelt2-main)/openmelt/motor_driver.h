@@ -1,3 +1,4 @@
+#include <ESP32Servo.h> 
 //intitialize motors
 void init_motors();
 
@@ -13,4 +14,7 @@ void motors_off();
 //motors coasting (unpowered part of rotation when translating)
 void motor_1_coast();
 void motor_2_coast();
+
+extern Servo esc1;
+extern Servo esc2;
 

@@ -41,7 +41,10 @@ static void wait_for_rc_good_and_zero_throttle() {
 
 //Arduino initial setup function
 void setup() {
-  
+  //CHANGE ESP32 FREQUENCY HERE
+  Serial.println("=== SETUP STARTED ===");
+  Serial.flush();
+    
   Serial.begin(115200);
   Serial.print("SETUP IS HAPPENING");
 
@@ -178,19 +181,25 @@ void loop() {
     echo_diagnostics();
   }
 
+
   //if RC is good - and throtte is above 0 - spin a single rotation
   Serial.println("WE MADE IT TO THE RC GET THROTTLE PERCENT IF STATEMENT");
-  //echo_diagnostics();
+  echo_diagnostics();
   Serial.println("\n\n\n\n\n\n\n");
+  Serial.print(rc_get_throttle_percent());
+  Serial.println("WE MADE IT PAST GET THROTTLE PERCENT YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY");
+  
   if (rc_get_throttle_percent() > 0) {
+    two_wheel_drive(1.0f);
     //this is where all the motor control happens!  (see spin_control.cpp)
+    /*
     if (true) {
-      two_wheel_drive(0.5f);
+      
     } else {
       spin_one_rotation();  
-    }
-  } else {    
+    } */
+  } /*else {    
     handle_bot_idle();
-  }
+  } */
 
 }

@@ -327,12 +327,25 @@ void spin_one_rotation(void) {
 void two_wheel_drive(float speed_throttle_percent_scalar){
   static struct melty_parameters_t melty_parameters = get_melty_parameters();
   Serial.println("OH IM TWO WHEELING IT!");
-  if (melty_parameters.translate_forback != RC_FORBACK_NEUTRAL){
-    Serial.print("TRYING TO SPIN MOTORS WITH:"); Serial.print(speed_throttle_percent_scalar*melty_parameters.throttle_percent); Serial.println(" % throttle");
-    motor_1_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
-    motor_2_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
+  Serial.print(melty_parameters.throttle_percent); Serial.println(" PERCENT MELTY throttle");
+  Serial.print("TRYING TO SPIN MOTORS WITH:"); Serial.print(speed_throttle_percent_scalar*rc_get_throttle_percent()); Serial.println(" % throttle");
+  if (rc_get_throttle_percent() > 50){
+    motor_1_on(speed_throttle_percent_scalar*rc_get_throttle_percent());
+    motor_2_on(speed_throttle_percent_scalar*rc_get_throttle_percent());
   } else {
-    motor_1_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
-    Serial.print("TRYING TO SPIN MOTOR 1 WITH:"); Serial.print(speed_throttle_percent_scalar*melty_parameters.throttle_percent); Serial.println(" % throttle");
+    motor_1_coast();
+    motor_2_coast();
   }
+
+
+  /*
+  if (melty_parameters.translate_forback != RC_FORBACK_NEUTRAL){
+    //Serial.print("TRYING TO SPIN MOTORS WITH:"); Serial.print(speed_throttle_percent_scalar*melty_parameters.throttle_percent); Serial.println(" % throttle");
+    //motor_1_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
+    //motor_2_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
+    Serial.print("")
+  } else {
+    //motor_1_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
+    //Serial.print("TRYING TO SPIN MOTOR 1 WITH:"); Serial.print(speed_throttle_percent_scalar*melty_parameters.throttle_percent); Serial.println(" % throttle");
+  } */
 }
