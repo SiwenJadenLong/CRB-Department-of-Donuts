@@ -19,6 +19,7 @@ void motor_on(float throttle_percent, Servo esc) {
 
   if (THROTTLE_TYPE == FIXED_PWM_THROTTLE) {
     //ledcWrite(motor_pin, PWM_MOTOR_ON);
+    Serial.println("TRIED TO TURN MOTOR ON");
     esc.writeMicroseconds(PWM_MOTOR_ON);
   }
 
