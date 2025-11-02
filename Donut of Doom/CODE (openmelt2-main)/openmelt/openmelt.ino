@@ -37,14 +37,10 @@ static void wait_for_rc_good_and_zero_throttle() {
       echo_diagnostics();
   }
 }
-  
 
 //Arduino initial setup function
 void setup() {
-  //CHANGE ESP32 FREQUENCY HERE
-  Serial.println("=== SETUP STARTED ===");
-  Serial.flush();
-    
+  //CHANGE ESP32 FREQUENCY HERE    
   Serial.begin(115200);
   Serial.print("SETUP IS HAPPENING");
 
@@ -58,7 +54,6 @@ void setup() {
 #endif
 
   init_rc();
-  delay(2000);
   init_accel();   //accelerometer uses i2c - which can fail blocking (so only initializing it -after- the watchdog is running)
   
 //load settings on boot
