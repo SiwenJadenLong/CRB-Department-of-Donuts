@@ -329,9 +329,9 @@ void two_wheel_drive(float speed_throttle_percent_scalar){
   Serial.println("OH IM TWO WHEELING IT!");
   Serial.print(melty_parameters.throttle_percent); Serial.println(" PERCENT MELTY throttle");
   Serial.print("TRYING TO SPIN MOTORS WITH:"); Serial.print(speed_throttle_percent_scalar*rc_get_throttle_percent()); Serial.println(" % throttle");
-  if (rc_get_throttle_percent() > 50){
-    motor_1_on(speed_throttle_percent_scalar*rc_get_throttle_percent());
-    motor_2_on(speed_throttle_percent_scalar*rc_get_throttle_percent());
+  if (rc_get_throttle_percent() > 25){
+    motor_1_on(speed_throttle_percent_scalar*rc_get_throttle_percent()/100);
+    motor_2_on(speed_throttle_percent_scalar*rc_get_throttle_percent()/100);
   } else {
     motor_1_coast();
     motor_2_coast();
