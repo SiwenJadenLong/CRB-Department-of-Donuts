@@ -158,6 +158,8 @@ static void handle_bot_idle() {
     echo_diagnostics();           //echo diagnostics if bot is idle
 }
 
+bool prev_rc_signal_was_healthy = false
+
 //main control loop
 void loop() {
 
@@ -165,6 +167,7 @@ void loop() {
 
   //if the rc signal isn't good - assure motors off - and "slow flash" LED
   //this will interrupt a spun-up bot if the signal becomes bad
+  bool prev_rc_signal_was_healthy = rc_signal_is_healthy()
   while (rc_signal_is_healthy() == false) {
     motors_off();
     
@@ -177,6 +180,10 @@ void loop() {
     echo_diagnostics();
   }
 
+  if (!prev_rc_signal_was_healthy) {
+    wait_for_rc_good_and_zero_throttle()
+  }
+  
 
 
   //if RC is good - and throtte is above 0 - spin a single rotation
