@@ -3,6 +3,7 @@
 #include "rc_handler.h"
 #include "arduino.h"
 #include "melty_config.h"
+#include <cmath>
 
 #define RC_DATA_UNLOCKED 0
 #define RC_DATA_LOCKED 1 
@@ -33,6 +34,13 @@ static struct rc_channel_t leftright_rc_channel = {
 
 static struct rc_channel_t throttle_rc_channel = {
   .pin = THROTTLE_RC_CHANNEL_PIN,
+  .pulse_length = MIN_RC_PULSE_LENGTH,
+  .pulse_start_time = 0,
+  .last_good_signal = 0
+};
+
+static struct rc_channel_t killswitch_rc_channel = {
+  .pin = KILLSWITCH_RC_CHANNEL_PIN,
   .pulse_length = MIN_RC_PULSE_LENGTH,
   .pulse_start_time = 0,
   .last_good_signal = 0
@@ -146,6 +154,15 @@ int rc_get_leftright() {
   return pulse_length - CENTER_LEFTRIGHT_PULSE_LENGTH;
 }
 
+int rc_get_killswitch() {
+  
+  lock_rc_data();
+  unsigned long pulse_length = killswitch_rc_channel.pulse_length;
+  unlock_rc_data();
+
+  return std::floor(pulse_length / 1500);
+}
+
 //ISRs for each RC interrupt pin
 void forback_rc_change() {
   update_rc_channel(&forback_rc_channel);
@@ -156,11 +173,15 @@ void leftright_rc_change() {
 void throttle_rc_change() {
   update_rc_channel(&throttle_rc_channel);
 }
+void killswitch_rc_change() {
+  update_rc_channel(&killswitch_rc_channel);
+}
 
 //attach interrupts to rc pins
 void init_rc(void) {
   attachInterrupt(digitalPinToInterrupt(forback_rc_channel.pin), forback_rc_change, CHANGE);
   attachInterrupt(digitalPinToInterrupt(leftright_rc_channel.pin), leftright_rc_change, CHANGE);
   attachInterrupt(digitalPinToInterrupt(throttle_rc_channel.pin), throttle_rc_change, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(killswitch_rc_channel.pin), killswitch_rc_change, CHANGE);
 }
 

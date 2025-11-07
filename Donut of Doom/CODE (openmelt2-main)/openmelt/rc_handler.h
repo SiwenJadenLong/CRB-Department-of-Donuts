@@ -14,6 +14,7 @@ int rc_get_throttle_percent();        //returns 0-100 value indicating throttle 
 
 rc_forback rc_get_forback();          //returns RC_FORBACK_FORWARD, RC_FORBACK_NEUTRAL or RC_FORBACK_BACKWARD depending on stick position
 int rc_get_leftright();               //returns offset in microseconds from center value (not converted to percentage)
+int rc_get_killswitch();
 
 //these functions return true if L/R stick movement is below defined thresholds
 bool rc_get_is_lr_in_config_deadzone();  

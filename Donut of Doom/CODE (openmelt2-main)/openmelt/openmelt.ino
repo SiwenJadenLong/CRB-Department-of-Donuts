@@ -32,8 +32,8 @@ static void wait_for_rc_good_and_zero_throttle() {
       
       //services watchdog and echo diagnostics while we are waiting for RC signal
       service_watchdog();
-      Serial.print("THIS IS THE RC SIGNAL:"); Serial.print(rc_signal_is_healthy());
-      Serial.print("WAIT FOR RC GOOD AND ZERO THROTTLE");
+      //Serial.print("THIS IS THE RC SIGNAL:"); Serial.print(rc_signal_is_healthy());
+      Serial.println("WAIT FOR RC GOOD AND ZERO THROTTLE");
       echo_diagnostics();
   }
 }
@@ -42,7 +42,7 @@ static void wait_for_rc_good_and_zero_throttle() {
 void setup() {
   //CHANGE ESP32 FREQUENCY HERE    
   Serial.begin(115200);
-  Serial.print("SETUP IS HAPPENING");
+  //Serial.print("SETUP IS HAPPENING");
 
   //get motor drivers setup (and off!) first thing
   init_motors();
@@ -86,6 +86,7 @@ static void echo_diagnostics() {
   Serial.print("  RC Throttle: "); Serial.print(rc_get_throttle_percent());
   Serial.print("  RC L/R: "); Serial.print(rc_get_leftright());
   Serial.print("  RC F/B: "); Serial.print(rc_get_forback());
+  Serial.print("  RC KILL: "); Serial.print(rc_get_killswitch());
 
 #ifdef BATTERY_ALERT_ENABLED
   Serial.print("  Battery Voltage: "); Serial.print(get_battery_voltage());
@@ -158,8 +159,6 @@ static void handle_bot_idle() {
     echo_diagnostics();           //echo diagnostics if bot is idle
 }
 
-bool prev_rc_signal_was_healthy = false
-
 //main control loop
 void loop() {
 
@@ -167,36 +166,26 @@ void loop() {
 
   //if the rc signal isn't good - assure motors off - and "slow flash" LED
   //this will interrupt a spun-up bot if the signal becomes bad
-  bool prev_rc_signal_was_healthy = rc_signal_is_healthy()
   while (rc_signal_is_healthy() == false) {
     motors_off();
     
-    heading_led_on(0); delay(30);
-    heading_led_off(); delay(600);
-    
     //services watchdog and echo diagnostics while we are waiting for RC signal
     service_watchdog();
-    Serial.print("RC SIGNAL IS NOT HEALTHY");
+    Serial.println("RC SIGNAL IS NOT HEALTHY");
     echo_diagnostics();
   }
-
-  if (!prev_rc_signal_was_healthy) {
-    wait_for_rc_good_and_zero_throttle()
-  }
-  
-
-
   //if RC is good - and throtte is above 0 - spin a single rotation
   //Serial.println("WE MADE IT TO THE RC GET THROTTLE PERCENT IF STATEMENT");
-  echo_diagnostics();
+  
   //Serial.println("WE MADE IT PAST GET THROTTLE PERCENT YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY");
   
-  if (rc_get_throttle_percent() > 0) {
+  if (rc_get_throttle_percent() > 0 && rc_get_killswitch() != 1) {
     //two_wheel_drive(1.0f);
     //this is where all the motor control happens!  (see spin_control.cpp)
+    echo_diagnostics();
     spin_one_rotation();  
   } else {    
     handle_bot_idle();
   } 
-  Serial.println("\n\n\n\n\n\n\n");
+  //Serial.println("\n\n\n\n\n\n\n");
 }
