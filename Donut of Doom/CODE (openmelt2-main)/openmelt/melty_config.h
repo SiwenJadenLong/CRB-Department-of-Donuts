@@ -45,7 +45,7 @@
 
 #define LEFTRIGHT_RC_CHANNEL_PIN 4                //To Left / Right on RC receiver
 #define FORBACK_RC_CHANNEL_PIN 5                      //To Forward / Back on RC receiver (Pin 1 on Arduino Micro labelled as "TX" - https://docs.arduino.cc/hacking/hardware/PinMapping32u4)
-#define THROTTLE_RC_CHANNEL_PIN 0 //was 0                 //To Throttle on RC receiver (Pin 0 on Arduino Micro labelled as "RX" - https://docs.arduino.cc/hacking/hardware/PinMapping32u4)
+#define THROTTLE_RC_CHANNEL_PIN 17 //was 0                 //To Throttle on RC receiver (Pin 0 on Arduino Micro labelled as "RX" - https://docs.arduino.cc/hacking/hardware/PinMapping32u4)
 
 #define HEADING_LED_PIN	2                         //To heading LED (pin 13 is on-board Arduino LED)
 

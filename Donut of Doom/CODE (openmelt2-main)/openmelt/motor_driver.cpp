@@ -56,7 +56,7 @@ void motor_2_coast() {
 
 void motor_off(int motor_pin) {
   if (THROTTLE_TYPE == FIXED_PWM_THROTTLE || THROTTLE_TYPE == DYNAMIC_PWM_THROTTLE) {
-    Serial.println("TRIED TO TURN MOTOR OFF");
+    //Serial.println("TRIED TO TURN MOTOR OFF");
     ledcWrite(motor_pin, PWM_MOTOR_OFF);
   }
   if (THROTTLE_TYPE == BINARY_THROTTLE) {

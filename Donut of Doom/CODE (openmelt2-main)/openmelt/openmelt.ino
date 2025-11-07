@@ -32,7 +32,7 @@ static void wait_for_rc_good_and_zero_throttle() {
       
       //services watchdog and echo diagnostics while we are waiting for RC signal
       service_watchdog();
-      Serial.print("THIS IS THE RC SIGNAL:"); Serial.print(rc_signal_is_healthy());
+      //Serial.print("THIS IS THE RC SIGNAL:"); Serial.print(rc_signal_is_healthy());
       Serial.print("WAIT FOR RC GOOD AND ZERO THROTTLE");
       echo_diagnostics();
   }
@@ -42,7 +42,7 @@ static void wait_for_rc_good_and_zero_throttle() {
 void setup() {
   //CHANGE ESP32 FREQUENCY HERE    
   Serial.begin(115200);
-  Serial.print("SETUP IS HAPPENING");
+  //Serial.print("SETUP IS HAPPENING");
 
   //get motor drivers setup (and off!) first thing
   init_motors();
@@ -158,7 +158,22 @@ static void handle_bot_idle() {
     echo_diagnostics();           //echo diagnostics if bot is idle
 }
 
-bool prev_rc_signal_was_healthy = false
+unsigned long previousMillis = 0; // Stores the time of the last loop iteration
+float deltaTime = 0; 
+
+float get_delta_time() { 
+  unsigned long currentMillis = millis(); // Get the current time in milliseconds
+
+  // Calculate deltaTime in seconds
+  deltaTime = (currentMillis - previousMillis) / 1000.0; 
+
+  previousMillis = currentMillis;
+
+  return deltaTime;
+}
+
+float max_time_bad_before_motors_are_stopped = 10.0f;
+float time_elapsed_while_bad = 0;
 
 //main control loop
 void loop() {
@@ -167,28 +182,26 @@ void loop() {
 
   //if the rc signal isn't good - assure motors off - and "slow flash" LED
   //this will interrupt a spun-up bot if the signal becomes bad
-  bool prev_rc_signal_was_healthy = rc_signal_is_healthy()
-  while (rc_signal_is_healthy() == false) {
-    motors_off();
-    
-    heading_led_on(0); delay(30);
-    heading_led_off(); delay(600);
-    
-    //services watchdog and echo diagnostics while we are waiting for RC signal
+  if (rc_signal_is_healthy() == false){
+    Serial.println("RC SIGNAL IS NOT HEALTHY");
     service_watchdog();
-    Serial.print("RC SIGNAL IS NOT HEALTHY");
-    echo_diagnostics();
-  }
-
-  if (!prev_rc_signal_was_healthy) {
-    wait_for_rc_good_and_zero_throttle()
+    time_elapsed_while_bad += get_delta_time();
+    Serial.print("Time elapsed while bad: "); Serial.println(time_elapsed_while_bad);
+    if (time_elapsed_while_bad > max_time_bad_before_motors_are_stopped){
+      motors_off();
+      wait_for_rc_good_and_zero_throttle();
+    }
+  } else {
+    Serial.println("RC SIGNAL IS HEALTHY");
+    time_elapsed_while_bad = 0;
+    get_delta_time();
   }
   
-
+  
 
   //if RC is good - and throtte is above 0 - spin a single rotation
   //Serial.println("WE MADE IT TO THE RC GET THROTTLE PERCENT IF STATEMENT");
-  echo_diagnostics();
+  //echo_diagnostics();
   //Serial.println("WE MADE IT PAST GET THROTTLE PERCENT YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY");
   
   if (rc_get_throttle_percent() > 0) {
@@ -198,5 +211,5 @@ void loop() {
   } else {    
     handle_bot_idle();
   } 
-  Serial.println("\n\n\n\n\n\n\n");
+  //Serial.println("\n\n\n\n\n\n\n");
 }
