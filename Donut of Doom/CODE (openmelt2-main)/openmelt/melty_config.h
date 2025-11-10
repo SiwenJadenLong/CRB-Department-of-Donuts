@@ -43,16 +43,16 @@
 //Common RC receiver setup LEFTRIGHT = CH1, FORBACK = CH2, THROTTLE = CH3
 //Note: Accelerometer is connected with default Arduino SDA / SCL pins
 
-#define LEFTRIGHT_RC_CHANNEL_PIN 4                //To Left / Right on RC receiver
-#define FORBACK_RC_CHANNEL_PIN 5                      //To Forward / Back on RC receiver (Pin 1 on Arduino Micro labelled as "TX" - https://docs.arduino.cc/hacking/hardware/PinMapping32u4)
-#define THROTTLE_RC_CHANNEL_PIN 17 //was 0                 //To Throttle on RC receiver (Pin 0 on Arduino Micro labelled as "RX" - https://docs.arduino.cc/hacking/hardware/PinMapping32u4)
-#define KILLSWITCH_RC_CHANNEL_PIN 16
+#define LEFTRIGHT_RC_CHANNEL_PIN 4 // Channel 1, Purple                 //To Left / Right on RC receiver
+#define FORBACK_RC_CHANNEL_PIN 5 // Channel 2, White                    //To Forward / Back on RC receiver (Pin 1 on Arduino Micro labelled as "TX" - https://docs.arduino.cc/hacking/hardware/PinMapping32u4)
+#define THROTTLE_RC_CHANNEL_PIN 17 // Channel 4, Yellow                 //To Throttle on RC receiver (Pin 0 on Arduino Micro labelled as "RX" - https://docs.arduino.cc/hacking/hardware/PinMapping32u4)
+#define KILLSWITCH_RC_CHANNEL_PIN 16 // Channel 3, Brown
 
 #define HEADING_LED_PIN	2                         //To heading LED (pin 13 is on-board Arduino LED)
 
 //no configuration changes are needed if only 1 motor is used!
-#define MOTOR_PIN1 18                              //Pin for Motor 1 driver
-#define MOTOR_PIN2 19                             //Pin for Motor 2 driver
+#define MOTOR_PIN1 18 // Mustard                             //Pin for Motor 1 driver
+#define MOTOR_PIN2 19 // Also Mustard                            //Pin for Motor 2 driver
 
 #define BATTERY_ADC_PIN A0                        //Pin for battery monitor (if enabled)
 
