@@ -230,7 +230,7 @@ static struct melty_parameters_t get_melty_parameters(void) {
 //handle translating forward
 static void translate_forward(struct melty_parameters_t melty_parameters, unsigned long time_spent_this_rotation_us) {
   if (time_spent_this_rotation_us >= melty_parameters.motor_start_phase_1 && time_spent_this_rotation_us <= melty_parameters.motor_stop_phase_1) {
-    motor_1_on(melty_parameters.throttle_percent);
+    motor_1_on(melty_parameters.throttle_percent);;
   } else {
     motor_1_coast();
   }

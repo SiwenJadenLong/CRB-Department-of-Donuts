@@ -77,7 +77,7 @@ void motors_off() {
   motor_2_off();
 }
 
-int FREQ = 50;
+int FREQ = 60;
 int RESOLUTION = 8;
 
 void init_motors() { //REWRITE ALL THE CODE TO HAVE CLEANER TELEMETRY AND ALSO TO WRITE PWM WITH LEDC
