@@ -91,9 +91,9 @@ enum throttle_modes {
 //----------PWM MOTOR SETTINGS---------- 
 //(only used if a PWM throttle mode is chosen)
 //PWM values are 0-255 duty cycle
-#define PWM_MOTOR_ON 24                          //Motor PWM ON duty cycle (Simonk: 140 seems barely on / 230 seems a good near-full-throttle value)
-#define PWM_MOTOR_COAST 13                      //Motor PWM COAST duty cycle - set to same as PWM_ESC_MOTOR_OFF for fully unpowered (best translation?)
-#define PWM_MOTOR_OFF 13                         //Motor PWM OFF duty cycle (Simonk: 100 worked well in testing - if this is too low - ESC may not init)
+#define PWM_MOTOR_ON 31                          //Motor PWM ON duty cycle (Simonk: 140 seems barely on / 230 seems a good near-full-throttle value)
+#define PWM_MOTOR_COAST 15                      //Motor PWM COAST duty cycle - set to same as PWM_ESC_MOTOR_OFF for fully unpowered (best translation?)
+#define PWM_MOTOR_OFF 15                        //Motor PWM OFF duty cycle (Simonk: 100 worked well in testing - if this is too low - ESC may not init)
 
 
 //----------BATTERY MONITOR----------

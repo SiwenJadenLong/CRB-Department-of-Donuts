@@ -184,7 +184,7 @@ void loop() {
     //this is where all the motor control happens!  (see spin_control.cpp)
     echo_diagnostics();
     spin_one_rotation();  
-  } else {    
+  } else {   
     handle_bot_idle();
   } 
   //Serial.println("\n\n\n\n\n\n\n");
