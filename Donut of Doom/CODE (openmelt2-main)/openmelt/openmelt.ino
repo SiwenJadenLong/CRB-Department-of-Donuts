@@ -184,7 +184,7 @@ void loop() {
     //two_wheel_drive(1.0f);
     //this is where all the motor control happens!  (see spin_control.cpp)
     echo_diagnostics();
-    spin_one_rotation();  
+    spin_one_rotation();
   } else {
     // if (rc_get_throttle_percent() > 0 && rc_get_killswitch() == 1){
     //   echo_diagnostics();
