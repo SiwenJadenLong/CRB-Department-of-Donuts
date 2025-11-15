@@ -34,7 +34,7 @@
 
 #define LEFT_RIGHT_HEADING_CONTROL_DIVISOR 1.5f   //How quick steering is (larger values = slower)
 
-#define MIN_TRANSLATION_RPM 400                   //full power spin in below this number (increasing can reduce spin-up time)
+#define MIN_TRANSLATION_RPM 200                   //full power spin in below this number (increasing can reduce spin-up time)
 
 
 //----------PIN MAPPINGS----------
