@@ -1,6 +1,6 @@
 
 //poorly allows for movement like a normal two wheeled bot - Cai
-void two_wheel_drive(float speed_throttle_percent_scalar);
+void two_wheel_drive(void);
 
 //does translational drift rotation (robot spins 360 degrees)
 void spin_one_rotation(void);

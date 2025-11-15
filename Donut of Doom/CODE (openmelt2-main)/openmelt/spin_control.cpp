@@ -86,7 +86,8 @@ static float get_rotation_interval_ms(int steering_disabled) {
     radius_adjustment_factor = (float)(rc_get_leftright() / (float)NOMINAL_PULSE_RANGE) / LEFT_RIGHT_HEADING_CONTROL_DIVISOR;
   }
   
-  float effective_radius_in_cm = accel_mount_radius_cm;
+  float effective_radius_in_cm = accel_mount_radius_cm;// + 4 * (float)(rc_get_leftright()/500.0f);
+  //Serial.print("effective_radius_in_cm: "); Serial.println(effective_radius_in_cm);
   
   effective_radius_in_cm = effective_radius_in_cm + (effective_radius_in_cm * radius_adjustment_factor);
 
@@ -334,28 +335,11 @@ void spin_one_rotation(void) {
 }
 
 //poorly allows for movement like a normal two wheeled bot - Cai
-void two_wheel_drive(float speed_throttle_percent_scalar){
-  static struct melty_parameters_t melty_parameters = get_melty_parameters();
-  Serial.println("OH IM TWO WHEELING IT!");
-  Serial.print(melty_parameters.throttle_percent); Serial.println(" PERCENT MELTY throttle");
-  Serial.print("TRYING TO SPIN MOTORS WITH:"); Serial.print(speed_throttle_percent_scalar*rc_get_throttle_percent()); Serial.println(" % throttle");
-  if (rc_get_throttle_percent() > 0){
-    motor_1_on(speed_throttle_percent_scalar*rc_get_throttle_percent()/100);
-    motor_2_on(speed_throttle_percent_scalar*rc_get_throttle_percent()/100);
-  } else {
-    motor_1_off();
-    motor_2_off();
-  }
-
-
-  /*
-  if (melty_parameters.translate_forback != RC_FORBACK_NEUTRAL){
-    //Serial.print("TRYING TO SPIN MOTORS WITH:"); Serial.print(speed_throttle_percent_scalar*melty_parameters.throttle_percent); Serial.println(" % throttle");
-    //motor_1_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
-    //motor_2_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
-    Serial.print("")
-  } else {
-    //motor_1_on(speed_throttle_percent_scalar*melty_parameters.throttle_percent);
-    //Serial.print("TRYING TO SPIN MOTOR 1 WITH:"); Serial.print(speed_throttle_percent_scalar*melty_parameters.throttle_percent); Serial.println(" % throttle");
-  } */
+void two_wheel_drive(){
+    float speed_scalar = 1.0f;
+    float leftright_percent = (float)(rc_get_leftright()+500)/10.0f;
+    Serial.print("leftright_percent: "); Serial.println(leftright_percent);
+    motor_1_on(speed_scalar*leftright_percent/100);
+    motor_2_on(speed_scalar*rc_get_throttle_percent()/100);
+    Serial.print("speed_scalar*rc_get_throttle_percent()/100: "); Serial.println(speed_scalar*rc_get_throttle_percent()/100);
 }

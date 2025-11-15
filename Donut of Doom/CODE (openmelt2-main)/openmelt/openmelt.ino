@@ -185,8 +185,13 @@ void loop() {
     //this is where all the motor control happens!  (see spin_control.cpp)
     echo_diagnostics();
     spin_one_rotation();  
-  } else {   
+  } else {
+    // if (rc_get_throttle_percent() > 0 && rc_get_killswitch() == 1){
+    //   echo_diagnostics();
+    //   two_wheel_drive();
+    // }else{
     handle_bot_idle();
+    //}
   } 
   //Serial.println("\n\n\n\n\n\n\n");
 }
