@@ -196,7 +196,10 @@ static struct melty_parameters_t get_melty_parameters(void) {
   melty_parameters.rotation_interval_us = get_rotation_interval_ms(melty_parameters.steering_disabled) * 1000;
   
   //if under defined RPM - just try to spin up (motors on for full rotation)
-  if (melty_parameters.rotation_interval_us > MAX_TRANSLATION_ROTATION_INTERVAL_US) motor_on_portion = 1;
+  if (melty_parameters.rotation_interval_us > MAX_TRANSLATION_ROTATION_INTERVAL_US){
+    heading_led_on(0);
+    motor_on_portion = 1;
+  } 
 
   //if we are too slow - don't even try to track heading
   if (melty_parameters.rotation_interval_us > MAX_TRACKING_ROTATION_INTERVAL_US) {
@@ -327,7 +330,9 @@ void spin_one_rotation(void) {
     }
 
     //displays heading LED at correct location
-    update_heading_led(melty_parameters, time_spent_this_rotation_us);
+    if (melty_parameters.rotation_interval_us != MAX_TRACKING_ROTATION_INTERVAL_US) {
+      update_heading_led(melty_parameters, time_spent_this_rotation_us);
+    }
 
     time_spent_this_rotation_us = micros() - start_time;
 
