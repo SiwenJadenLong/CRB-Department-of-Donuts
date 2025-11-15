@@ -24,7 +24,7 @@
 //----------TRANSLATIONAL DRIFT SETTINGS----------
 //"DEFAULT" values are overriden by interactive config / stored in EEPROM (interactive config will be easier if they are about correct)
 //To force these values to take effect after interactive config - increment EEPROM_WRITTEN_SENTINEL_VALUE
-#define DEFAULT_ACCEL_MOUNT_RADIUS_CM 3.9         //Radius of accelerometer from center of robot
+#define DEFAULT_ACCEL_MOUNT_RADIUS_CM 4.3         //Radius of accelerometer from center of robot
 #define DEFAULT_LED_OFFSET_PERCENT 7              //Adjust to make heading LED line up with direction robot travels 0-99 (increasing moves beacon clockwise)
                                                    
 #define DEFAULT_ACCEL_ZERO_G_OFFSET 0.0f          //Value accelerometer returns with robot at rest (in G) - adjusts for any offset
@@ -34,7 +34,7 @@
 
 #define LEFT_RIGHT_HEADING_CONTROL_DIVISOR 1.5f   //How quick steering is (larger values = slower)
 
-#define MIN_TRANSLATION_RPM 400                   //full power spin in below this number (increasing can reduce spin-up time)
+#define MIN_TRANSLATION_RPM 100                   //full power spin in below this number (increasing can reduce spin-up time)
 
 
 //----------PIN MAPPINGS----------

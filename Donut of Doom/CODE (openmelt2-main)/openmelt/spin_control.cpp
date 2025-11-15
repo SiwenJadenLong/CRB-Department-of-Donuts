@@ -31,6 +31,10 @@ void load_melty_config_settings() {
   accel_mount_radius_cm = load_accel_mount_radius();
   accel_zero_g_offset = load_accel_zero_g_offset();
   led_offset_percent = load_heading_led_offset();
+  // Serial.println("LOADING CONFIGURED SETTINGS FROM EEPROM!");
+  // Serial.print("accel_mount_radius_cm: "); Serial.println(accel_mount_radius_cm);
+  // Serial.print("accel_zero_g_offset: "); Serial.println(accel_zero_g_offset);
+  // Serial.print("led_offset_percent: "); Serial.println(led_offset_percent);
 #endif  
 }
 
@@ -106,8 +110,9 @@ static struct melty_parameters_t handle_config_mode(struct melty_parameters_t me
   //if forback forward - normal drive (for driver testing - no adjustment of melty parameters)
 
   //if forback neutral - then do radius adjustment
+  Serial.println("HANDLING CONFIG MODE");
   if (melty_parameters.translate_forback == RC_FORBACK_NEUTRAL) {
-
+      Serial.println("ADJUSTING ACCEL RADIUS");
     //radius adjustment overrides steering
     melty_parameters.steering_disabled = 1;
 
@@ -119,6 +124,8 @@ static struct melty_parameters_t handle_config_mode(struct melty_parameters_t me
       float adjustment_factor = (accel_mount_radius_cm * (float)(rc_get_leftright() / (float)NOMINAL_PULSE_RANGE));
       adjustment_factor = adjustment_factor / LEFT_RIGHT_CONFIG_RADIUS_ADJUST_DIVISOR;
       accel_mount_radius_cm = accel_mount_radius_cm + adjustment_factor;
+      Serial.println("REALLY ADJUSTING ACCEL RADIUS");
+      Serial.print("accel_mount_radius_cm: "); Serial.println(accel_mount_radius_cm);
 
       if (accel_mount_radius_cm < ACCEL_MOUNT_RADIUS_MINIMUM_CM) accel_mount_radius_cm = ACCEL_MOUNT_RADIUS_MINIMUM_CM;
     }    
@@ -126,7 +133,7 @@ static struct melty_parameters_t handle_config_mode(struct melty_parameters_t me
   
   //if forback backward - do LED heading adjustment (don't translate)
   if (melty_parameters.translate_forback == RC_FORBACK_BACKWARD) {
-    
+    Serial.println("ADJUSTING LED HEADING");
     //LED heading offset adjustment overrides steering
     melty_parameters.steering_disabled = 1;
     
@@ -142,6 +149,9 @@ static struct melty_parameters_t handle_config_mode(struct melty_parameters_t me
       float adjustment_factor =  (float)(rc_get_leftright() / (float)NOMINAL_PULSE_RANGE);
       adjustment_factor = adjustment_factor / LEFT_RIGHT_CONFIG_LED_ADJUST_DIVISOR;
       led_offset_percent = led_offset_percent + adjustment_factor;
+
+      Serial.println("REALLY ADJUSTING LED HEADING");
+      Serial.print("led_offset_percent: "); Serial.println(led_offset_percent);
 
       if (led_offset_percent > 99) led_offset_percent = 0;
       if (led_offset_percent < 0) led_offset_percent = 99;

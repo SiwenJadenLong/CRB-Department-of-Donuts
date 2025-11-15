@@ -35,6 +35,7 @@ static void wait_for_rc_good_and_zero_throttle() {
       //Serial.print("THIS IS THE RC SIGNAL:"); Serial.print(rc_signal_is_healthy());
       Serial.println("WAIT FOR RC GOOD AND ZERO THROTTLE");
       echo_diagnostics();
+      //load_melty_config_settings();
   }
 }
 
