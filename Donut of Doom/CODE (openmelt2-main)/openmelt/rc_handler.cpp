@@ -88,7 +88,7 @@ static void update_rc_channel(struct rc_channel_t *rc_channel) {
 bool rc_signal_is_healthy() {
   
   lock_rc_data();
-  unsigned long last_good_signal = throttle_rc_channel.last_good_signal;
+  unsigned long last_good_signal = killswitch_rc_channel.last_good_signal;
   unlock_rc_data();
   
   //initial signal not received

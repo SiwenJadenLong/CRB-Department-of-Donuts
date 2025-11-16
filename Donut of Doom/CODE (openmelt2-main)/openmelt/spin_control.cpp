@@ -95,6 +95,7 @@ static float get_rotation_interval_ms(int steering_disabled) {
   //use of absolute makes it so we don't need to worry about accel orientation
   //calculate RPM from g's - derived from "G = 0.00001118 * r * RPM^2"
   rpm = fabs(get_accel_force_g() - accel_zero_g_offset) * 89445.0f;
+  //rpm = fabs(25 - accel_zero_g_offset) * 89445.0f;
   rpm = rpm / effective_radius_in_cm;
   rpm = sqrt(rpm);
 
@@ -196,15 +197,15 @@ static struct melty_parameters_t get_melty_parameters(void) {
   melty_parameters.rotation_interval_us = get_rotation_interval_ms(melty_parameters.steering_disabled) * 1000;
   
   //if under defined RPM - just try to spin up (motors on for full rotation)
-  if (melty_parameters.rotation_interval_us > MAX_TRANSLATION_ROTATION_INTERVAL_US){
-    heading_led_on(0);
-    motor_on_portion = 1;
-  } 
+  // if (melty_parameters.rotation_interval_us > MAX_TRANSLATION_ROTATION_INTERVAL_US){
+  //   heading_led_on(0);
+  //   motor_on_portion = 1;
+  // } 
 
   //if we are too slow - don't even try to track heading
-  if (melty_parameters.rotation_interval_us > MAX_TRACKING_ROTATION_INTERVAL_US) {
-    melty_parameters.rotation_interval_us = MAX_TRACKING_ROTATION_INTERVAL_US;
-  }
+  // if (melty_parameters.rotation_interval_us > MAX_TRACKING_ROTATION_INTERVAL_US) {
+  //   melty_parameters.rotation_interval_us = MAX_TRACKING_ROTATION_INTERVAL_US;
+  // }
 
   unsigned long motor_on_us = motor_on_portion * melty_parameters.rotation_interval_us;
   unsigned long led_on_us = led_on_portion * melty_parameters.rotation_interval_us;
@@ -243,20 +244,32 @@ static struct melty_parameters_t get_melty_parameters(void) {
 
 //handle translating forward
 static void translate_forward(struct melty_parameters_t melty_parameters, unsigned long time_spent_this_rotation_us) {
+  Serial.println("TRANSLATING FORWARD!");
   if (time_spent_this_rotation_us >= melty_parameters.motor_start_phase_1 && time_spent_this_rotation_us <= melty_parameters.motor_stop_phase_1) {
-    motor_1_on(melty_parameters.throttle_percent);;
+    Serial.println("MOTOR 1 FORWARD ON!");
+    Serial.print("time_spent_this_rotation_us"); Serial.println(time_spent_this_rotation_us);
+    Serial.print("melty_parameters.motor_start_phase_1: "); Serial.println(melty_parameters.motor_start_phase_1);
+    Serial.print("melty_parameters.motor_stop_phase_1: "); Serial.println(melty_parameters.motor_stop_phase_1);
+    motor_1_on(melty_parameters.throttle_percent);
   } else {
+    Serial.println("MOTOR 1 FORWARD OFF!");
     motor_1_coast();
   }
-  if (time_spent_this_rotation_us >= melty_parameters.motor_start_phase_2 || time_spent_this_rotation_us <= melty_parameters.motor_stop_phase_2) {        
+  if (time_spent_this_rotation_us >= melty_parameters.motor_start_phase_2 || time_spent_this_rotation_us <= melty_parameters.motor_stop_phase_2) {
+    Serial.println("MOTOR 2 FORWARD ON!");
+    Serial.print("time_spent_this_rotation_us"); Serial.println(time_spent_this_rotation_us);
+    Serial.print("melty_parameters.motor_start_phase_2: "); Serial.println(melty_parameters.motor_start_phase_2);
+    Serial.print("melty_parameters.motor_stop_phase_2: "); Serial.println(melty_parameters.motor_stop_phase_2);
     motor_2_on(melty_parameters.throttle_percent);
   } else {
+    Serial.println("MOTOR 2 FORWARD OFF!");
     motor_2_coast();
   }
 }
 
 //handle translating backward (motor1 and motor2 timings are swapped - offset by 180 degrees)
 static void translate_backward(struct melty_parameters_t melty_parameters, unsigned long time_spent_this_rotation_us) {
+  Serial.println("TRANSLATING BACKWARD!");
   if (time_spent_this_rotation_us >= melty_parameters.motor_start_phase_2 || time_spent_this_rotation_us <= melty_parameters.motor_stop_phase_2) {
     motor_1_on(melty_parameters.throttle_percent);
   } else {

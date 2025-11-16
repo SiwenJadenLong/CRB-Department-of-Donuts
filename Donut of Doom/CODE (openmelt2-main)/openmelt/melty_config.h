@@ -27,14 +27,14 @@
 #define DEFAULT_ACCEL_MOUNT_RADIUS_CM 4.45         //Radius of accelerometer from center of robot
 #define DEFAULT_LED_OFFSET_PERCENT 7              //Adjust to make heading LED line up with direction robot travels 0-99 (increasing moves beacon clockwise)
                                                    
-#define DEFAULT_ACCEL_ZERO_G_OFFSET 0.5f          //Value accelerometer returns with robot at rest (in G) - adjusts for any offset
+#define DEFAULT_ACCEL_ZERO_G_OFFSET 1.5f          //Value accelerometer returns with robot at rest (in G) - adjusts for any offset
                                                   //H3LIS331 claims +/-1g DC offset - typical - but +/-2.5 has been observed at +/-400g setting (enough to cause tracking error)
                                                   //Just enterring and exiting config mode will automatically set this value / save to EEPROM (based on current accel reading reflecting 0g)
                                                   //For small-radius bots - try changing to H3LIS331 to +/-200g range for improved accuracy (accel_handler.h)
 
 #define LEFT_RIGHT_HEADING_CONTROL_DIVISOR 1.5f   //How quick steering is (larger values = slower)
 
-#define MIN_TRANSLATION_RPM 200                   //full power spin in below this number (increasing can reduce spin-up time)
+#define MIN_TRANSLATION_RPM 400                   //full power spin in below this number (increasing can reduce spin-up time)
 
 
 //----------PIN MAPPINGS----------
@@ -79,12 +79,12 @@ enum throttle_modes {
                         //This mode reduces current levels during spin up at part throttle
 };
 
-#define THROTTLE_TYPE DYNAMIC_PWM_THROTTLE      //<---Throttle type set here!
+#define THROTTLE_TYPE FIXED_PWM_THROTTLE      //<---Throttle type set here!
 
-#define DYNAMIC_PWM_MOTOR_ON_PORTION 0.5f       //if defined (and DYNAMIC_PWM_THROTTLE is set) portion of each rotation motor is on is fixed at this value
+#define DYNAMIC_PWM_MOTOR_ON_PORTION 0.75f       //if defined (and DYNAMIC_PWM_THROTTLE is set) portion of each rotation motor is on is fixed at this value
                                                 //About 0.5f for best translation (higher for increased RPM)
 
-#define DYNAMIC_PWM_THROTTLE_PERCENT_MAX 1.0f   //Range of RC throttle DYNAMIC_PWM_THROTTLE is applied to 
+#define DYNAMIC_PWM_THROTTLE_PERCENT_MAX 0.5f   //Range of RC throttle DYNAMIC_PWM_THROTTLE is applied to 
                                                 //0.5f for 0-50% throttle (full PWM_MOTOR_ON used for >50% throttle)
                                                 //1.0f for 0-100% throttle
 
