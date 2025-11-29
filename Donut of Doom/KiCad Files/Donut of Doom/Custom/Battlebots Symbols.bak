@@ -390,6 +390,14 @@
 			)
 		)
 		(symbol "BETAFPV_ExpressLRS_Lite_V1.2_1_1"
+			(text "BETAFPV ExpressLRS Lite V1.2"
+				(at 2.032 -9.144 0)
+				(effects
+					(font
+						(size 0.635 0.635)
+					)
+				)
+			)
 			(pin power_in line
 				(at -7.62 2.54 0)
 				(length 2.54)
@@ -470,7 +478,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(property "Reference" "U"
-			(at 17.272 5.334 0)
+			(at 8.382 22.098 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -527,7 +535,7 @@
 		)
 		(symbol "CJMCU-MPU_1_1"
 			(text "CJMCU-MPU\n"
-				(at 22.606 3.556 0)
+				(at -0.508 22.098 0)
 				(effects
 					(font
 						(size 1.27 1.27)

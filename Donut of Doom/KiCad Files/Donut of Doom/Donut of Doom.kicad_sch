@@ -289,22 +289,20 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U1"
-				(at 30.48 1.9051 0)
+			(property "Reference" "U"
+				(at 8.382 22.098 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "~"
-				(at 30.48 -0.6349 0)
+			(property "Value" ""
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" ""
@@ -349,7 +347,7 @@
 			)
 			(symbol "CJMCU-MPU_1_1"
 				(text "CJMCU-MPU\n"
-					(at 22.606 3.556 0)
+					(at -0.508 22.098 0)
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -3496,7 +3494,7 @@
 	)
 	(rectangle
 		(start 21.59 115.57)
-		(end 262.89 236.22)
+		(end 262.89 241.3)
 		(stroke
 			(width 0)
 			(type default)
@@ -3518,7 +3516,7 @@
 		)
 		(uuid 9dc194f5-6019-40b1-a5ad-27d892a22123)
 	)
-	(text "Directional LED indicator\n"
+	(text "Directional LED indicator (mutable)\n\n"
 		(exclude_from_sim no)
 		(at 44.196 203.708 0)
 		(effects
@@ -4287,7 +4285,7 @@
 		(uuid "fdd017a8-b501-4265-a790-50768edea52e")
 	)
 	(image
-		(at 220.98 222.25)
+		(at 227.33 227.33)
 		(uuid "2c82fb88-984f-4d0f-9cd0-81ec032704db")
 		(data "iVBORw0KGgoAAAANSUhEUgAAA1AAAAFFCAIAAABt/ZtnAAAAA3NCSVQICAjb4U/gAAAgAElEQVR4"
 			"nOy9ebwkVXk+/r5nq6277zYzDDAsBgLIIoiKjAsa9KcQBBVRQbYYRUgMagRjUBT3LQiiaBBBFCPu"
