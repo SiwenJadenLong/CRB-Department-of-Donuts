@@ -285,258 +285,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Battlebots Symbols:CJMCU-MPU"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 8.382 22.098 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "CJMCU-MPU_0_1"
-				(rectangle
-					(start -12.7 20.32)
-					(end 12.7 -19.05)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "CJMCU-MPU_1_1"
-				(text "CJMCU-MPU\n"
-					(at -0.508 22.098 0)
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 17.78 0)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 13.97 0)
-					(length 2.54)
-					(name "SCL/SCLK"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 10.16 0)
-					(length 2.54)
-					(name "SDA/SDI"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 6.35 0)
-					(length 2.54)
-					(name "NCS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 2.54 0)
-					(length 2.54)
-					(name "ADO/SDO"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 -1.27 0)
-					(length 2.54)
-					(name "INT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 -5.08 0)
-					(length 2.54)
-					(name "FSY/FSYNC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 -8.89 0)
-					(length 2.54)
-					(name "ACL/AUX-CL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 -12.7 0)
-					(length 2.54)
-					(name "ADA/AUX-DA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -15.24 -16.51 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Battlebots Symbols:FingerTech_Power_Switch"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2805,6 +2553,260 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "adafruit_h3lis331:Adafruit_H3LIS331"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U6"
+				(at -12.954 2.286 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Value" "H3LIS331"
+				(at -12.954 -0.254 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Adafruit_H3LIS331_0_1"
+				(rectangle
+					(start -11.43 18.542)
+					(end 11.43 -20.32)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Adafruit_H3LIS331_1_1"
+				(text "Adafruit H3LIS331"
+					(at -2.286 -18.796 0)
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(pin power_in line
+					(at 13.97 16.51 180)
+					(length 2.54)
+					(name "Vin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 13.97 12.7 180)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 13.97 8.89 180)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 13.97 5.08 180)
+					(length 2.54)
+					(name "I2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "I2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 13.97 1.27 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 13.97 -2.54 180)
+					(length 2.54)
+					(name "SDO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "SDO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 13.97 -6.35 180)
+					(length 2.54)
+					(name "CS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "CS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 13.97 -10.16 180)
+					(length 2.54)
+					(name "INT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "INT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 13.97 -13.97 180)
+					(length 2.54)
+					(name "3V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 13.97 -17.78 180)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "jcr_rc_mini_35A_am32_1"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3518,7 +3520,7 @@
 	)
 	(text "Directional LED indicator (mutable)\n\n"
 		(exclude_from_sim no)
-		(at 44.196 203.708 0)
+		(at 45.466 193.294 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3574,6 +3576,16 @@
 		)
 		(uuid "64573cc3-513f-44bf-b561-d0cfa3512133")
 	)
+	(text "Debug LED"
+		(exclude_from_sim no)
+		(at 61.976 212.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "925785ca-b547-4c46-a3cd-55bb6358200b")
+	)
 	(text "Pico 2 has a 5v to 3V3 regulator\n"
 		(exclude_from_sim no)
 		(at 155.194 127.762 0)
@@ -3595,6 +3607,18 @@
 			)
 		)
 		(uuid "ec1f85f7-1501-4718-bf76-a55c8321cd32")
+	)
+	(junction
+		(at 44.45 208.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "11191476-0b88-4235-b08b-56e93a04e0f2")
+	)
+	(junction
+		(at 44.45 222.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2f5f7af0-cdb0-4fd6-8ff9-6b83d2dbc303")
 	)
 	(junction
 		(at 168.91 76.2)
@@ -3706,6 +3730,16 @@
 	)
 	(wire
 		(pts
+			(xy 44.45 208.28) (xy 44.45 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18afe840-ce09-42bf-b9de-9f729e9821cb")
+	)
+	(wire
+		(pts
 			(xy 181.61 76.2) (xy 199.39 76.2)
 		)
 		(stroke
@@ -3713,16 +3747,6 @@
 			(type default)
 		)
 		(uuid "1f756ba4-22a8-48ef-94dd-65137403f985")
-	)
-	(wire
-		(pts
-			(xy 66.04 137.16) (xy 66.04 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "23f6cfc2-b158-441e-95cb-e49e8eff3c7d")
 	)
 	(wire
 		(pts
@@ -3756,6 +3780,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 218.44) (xy 54.61 222.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fb7904a-cda6-462a-baef-af0acfa7bc8d")
+	)
+	(wire
+		(pts
 			(xy 217.17 38.1) (xy 226.06 38.1)
 		)
 		(stroke
@@ -3766,7 +3800,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 222.25) (xy 44.45 218.44)
+			(xy 44.45 226.06) (xy 44.45 222.25)
 		)
 		(stroke
 			(width 0)
@@ -3806,7 +3840,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 209.55) (xy 44.45 210.82)
+			(xy 44.45 201.93) (xy 44.45 208.28)
 		)
 		(stroke
 			(width 0)
@@ -3926,13 +3960,13 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 142.24) (xy 66.04 142.24)
+			(xy 54.61 210.82) (xy 54.61 208.28)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "68c74657-5fef-48cb-a6df-319568ee639a")
+		(uuid "6a878484-5664-477b-98f5-32ce74c7a5c5")
 	)
 	(wire
 		(pts
@@ -4076,16 +4110,6 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 146.05) (xy 66.04 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "90a4b90f-2dbb-4a75-95ed-76fd8001a86f")
-	)
-	(wire
-		(pts
 			(xy 217.17 69.85) (xy 218.44 69.85)
 		)
 		(stroke
@@ -4116,6 +4140,16 @@
 	)
 	(wire
 		(pts
+			(xy 66.04 142.24) (xy 72.39 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cbaa39c-8214-4c1f-8f5f-d1e3bbe62a16")
+	)
+	(wire
+		(pts
 			(xy 217.17 38.1) (xy 217.17 36.83)
 		)
 		(stroke
@@ -4136,6 +4170,16 @@
 	)
 	(wire
 		(pts
+			(xy 54.61 222.25) (xy 44.45 222.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1fa3490-1cbf-4711-a58c-3ead61376330")
+	)
+	(wire
+		(pts
 			(xy 218.44 76.2) (xy 226.06 76.2)
 		)
 		(stroke
@@ -4153,6 +4197,26 @@
 			(type default)
 		)
 		(uuid "a6d5d506-1fba-4ade-bd91-195e7ef9d9a1")
+	)
+	(wire
+		(pts
+			(xy 44.45 222.25) (xy 44.45 218.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7f2db3f-ec43-4695-a3f3-7b9a0795e729")
+	)
+	(wire
+		(pts
+			(xy 66.04 146.05) (xy 72.39 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8c87c5d-63dd-4866-b805-b4dd5cdac21c")
 	)
 	(wire
 		(pts
@@ -4193,6 +4257,16 @@
 			(type default)
 		)
 		(uuid "c26e0c5b-e200-4e0b-9b70-1f7f8ae80e56")
+	)
+	(wire
+		(pts
+			(xy 54.61 208.28) (xy 44.45 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5d42c8f-0b51-446e-b9bd-eed9131e8b2c")
 	)
 	(wire
 		(pts
@@ -4246,7 +4320,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 137.16) (xy 68.58 137.16)
+			(xy 66.04 138.43) (xy 68.58 138.43)
 		)
 		(stroke
 			(width 0)
@@ -4283,6 +4357,16 @@
 			(type default)
 		)
 		(uuid "fdd017a8-b501-4265-a790-50768edea52e")
+	)
+	(wire
+		(pts
+			(xy 68.58 138.43) (xy 68.58 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "feea36c6-4374-4f36-8e26-8e713b144dea")
 	)
 	(image
 		(at 227.33 227.33)
@@ -9813,7 +9897,7 @@
 		)
 	)
 	(label "I2C0 SCL"
-		(at 69.85 142.24 0)
+		(at 72.39 146.05 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9823,7 +9907,7 @@
 		(uuid "099f90b5-e3c1-4deb-a9b1-81223a70d8c8")
 	)
 	(label "I2C0 SDA"
-		(at 69.85 146.05 0)
+		(at 72.39 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9853,7 +9937,7 @@
 		(uuid "40c71c6a-2e0d-4196-ae50-eeb449559151")
 	)
 	(label "GPIO4"
-		(at 44.45 209.55 180)
+		(at 44.45 201.93 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10851,6 +10935,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 54.61 214.63 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5e990b43-4aa5-4cdc-b7c2-ebf5dddeece4")
+		(property "Reference" "D4"
+			(at 58.42 214.9474 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED"
+			(at 58.42 217.4874 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 54.61 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 54.61 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 54.61 214.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ce12460b-1ea3-4c85-a605-fb16b3c10c9c")
+		)
+		(pin "2"
+			(uuid "55e35063-e574-4add-b3fb-3d9ffeb3969f")
+		)
+		(instances
+			(project "Donut of Doom"
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+BATT")
 		(at 195.58 35.56 0)
 		(unit 1)
@@ -11361,7 +11524,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 44.45 222.25 0)
+		(at 44.45 226.06 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11369,7 +11532,7 @@
 		(dnp no)
 		(uuid "7fc044ff-d806-457b-9e75-b789964b9cf3")
 		(property "Reference" "#PWR013"
-			(at 44.45 228.6 0)
+			(at 44.45 232.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11378,7 +11541,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 47.752 223.012 0)
+			(at 47.752 226.822 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11386,7 +11549,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 44.45 222.25 0)
+			(at 44.45 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11395,7 +11558,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 44.45 222.25 0)
+			(at 44.45 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11404,7 +11567,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 44.45 222.25 0)
+			(at 44.45 226.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11883,9 +12046,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Battlebots Symbols:CJMCU-MPU")
-		(at 50.8 156.21 0)
-		(mirror y)
+		(lib_id "adafruit_h3lis331:Adafruit_H3LIS331")
+		(at 52.07 154.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11893,7 +12055,7 @@
 		(dnp no)
 		(uuid "c49b9a8b-ecc8-434e-8282-2ea2bec40910")
 		(property "Reference" "U1"
-			(at 34.544 171.958 0)
+			(at 68.326 170.688 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11902,7 +12064,7 @@
 			)
 		)
 		(property "Value" "~"
-			(at 34.544 174.498 0)
+			(at 68.326 173.228 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11910,8 +12072,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 50.8 156.21 0)
+		(property "Footprint" "adafruit_h3lis331:Adafruit_H3LIS331"
+			(at 52.07 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11920,7 +12082,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 156.21 0)
+			(at 52.07 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11929,7 +12091,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 50.8 156.21 0)
+			(at 52.07 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11937,34 +12099,34 @@
 				(hide yes)
 			)
 		)
-		(pin ""
+		(pin "CS"
 			(uuid "4d3b4ccc-94d9-4d52-a163-5d0034eadf1d")
 		)
-		(pin ""
+		(pin "SDA"
 			(uuid "745aad5a-d1fa-46f5-beed-f8689137429f")
 		)
-		(pin ""
+		(pin "NC"
 			(uuid "5d935dfb-7c57-4263-84ad-e66465be7f3a")
 		)
-		(pin ""
+		(pin "SCL"
 			(uuid "f03d47a7-1e29-4e14-b3af-0a8398aa574b")
 		)
-		(pin ""
+		(pin "GND"
 			(uuid "d0926d61-fb68-481e-8500-b9829120b850")
 		)
-		(pin ""
+		(pin "VIN"
 			(uuid "2c3a234a-5569-4455-8b33-518a662b943c")
 		)
-		(pin ""
+		(pin "SDO"
 			(uuid "b67692cf-dbc9-4258-a254-7d9cc41ddb7f")
 		)
-		(pin ""
+		(pin "INT"
 			(uuid "b0587769-c4ff-4faa-9590-a84f0f9e6692")
 		)
-		(pin ""
+		(pin "3V"
 			(uuid "1d687a35-a827-4c4f-a238-edc6c2fa105d")
 		)
-		(pin ""
+		(pin "I2"
 			(uuid "e7214664-fe7d-47be-be15-e0cb372c23e7")
 		)
 		(instances

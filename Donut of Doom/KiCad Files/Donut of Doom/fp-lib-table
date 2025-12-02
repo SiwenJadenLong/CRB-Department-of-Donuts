@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "Module_RaspberryPi_Pico")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/RaspberryPi_Pico/Module_RaspberryPi_Pico.pretty")(options "")(descr ""))
   (lib (name "Battlebots")(type "KiCad")(uri "${KIPRJMOD}/Custom/Battlebots.pretty")(options "")(descr ""))
+  (lib (name "adafruit_h3lis331")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/adafruit_h3lis331")(options "")(descr ""))
 )

@@ -2,4 +2,5 @@
   (version 7)
   (lib (name "Battlebots Symbols")(type "KiCad")(uri "${KIPRJMOD}/Custom/Battlebots Symbols.kicad_sym")(options "")(descr ""))
   (lib (name "MCU_Module_RaspberryPi_Pico")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/RaspberryPi_Pico/MCU_Module_RaspberryPi_Pico.kicad_sym")(options "")(descr ""))
+  (lib (name "adafruit_h3lis331")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/adafruit_h3lis331/adafruit_h3lis331.kicad_sym")(options "")(descr ""))
 )
