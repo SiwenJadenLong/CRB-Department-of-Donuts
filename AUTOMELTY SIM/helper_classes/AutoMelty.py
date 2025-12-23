@@ -3,7 +3,10 @@ from helper_classes.Arena import Arena
 import pygame
 import math
 
-#self.arena_rect = pygame.Rect(surface.height//2, surface.width//2, surface.height-20, surface.width-20)
+#TO DO
+# actually show each distance ray that is being cast at what angle
+# make sure robot never leaves box
+# tune delta_distance_threshold value to make sure opponent robot is actually being detected
 
 class AutoMelty(Robot):
     def __init__(self, accel, ang_accel, poll_resolution, agro, delta_distance_threshold, rect, color = pygame.Color(0, 0, 0), should_draw_heading=False, should_draw_desired_heading=False):
