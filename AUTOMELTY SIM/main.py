@@ -2,6 +2,7 @@ import pygame
 from helper_classes.ControlledRobots import ControlledNormalBot
 from helper_classes.ControlledRobots import ControlledMelty
 from helper_classes.AutoMelty import AutoMelty
+from helper_classes.Arena import Arena
 
 pygame.init()
 screen_width = 1280
@@ -11,8 +12,9 @@ pygame.display.set_caption("AutoMelty Sim")
 
 clock = pygame.time.Clock()
 running = True
-robot = ControlledNormalBot(pygame.K_w, pygame.K_s, pygame.K_a, pygame.K_d, 25, 250, pygame.Rect(100, 100, 100, 100), should_draw_heading=True)
-auto_melty = AutoMelty(25, 250, 1, True, 10,  pygame.Rect(100, 100, 100, 100), should_draw_heading=True, should_draw_desired_heading=True)
+arena = Arena(screen, 20)
+robot = ControlledNormalBot(pygame.K_w, pygame.K_s, pygame.K_a, pygame.K_d, 100, 2000, pygame.Rect(500, 500, 100, 100), should_draw_heading=True)
+auto_melty = AutoMelty(25, 2500, 1, True, 10,  pygame.Rect(100, 100, 100, 100), should_draw_heading=True, should_draw_desired_heading=True)
  
 while running:
     for event in pygame.event.get():
@@ -20,6 +22,9 @@ while running:
             running = False
 
     screen.fill(pygame.Color(255, 255, 255))
+
+    arena.draw(screen)
+
     robot.update(pygame.key.get_pressed())
     robot.draw(screen)
 

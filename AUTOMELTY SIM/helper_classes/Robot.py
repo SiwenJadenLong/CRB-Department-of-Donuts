@@ -42,4 +42,5 @@ class Robot:
         self.ang_vel += angular_accel / Robot.ANG_ACCEL_REDUCTION
         self.ang_vel *= Robot.ANG_VEL_LOSS
         
-        self.curr_heading = (self.curr_heading + 360 * self.ang_vel) % 360
+        self.curr_heading %= 360
+        self.curr_heading += 360 * self.ang_vel
