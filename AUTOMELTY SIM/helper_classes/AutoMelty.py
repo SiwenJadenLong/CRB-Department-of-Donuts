@@ -22,19 +22,20 @@ class AutoMelty(Robot):
         self.atd = [] #angle to distance | degrees, distance (D) in meters 
         self.atdd = [] #angle to delta distance | degrees, change in distance with respect to angle (avg rate of change)
         self.atwad = [] #angle to weighted delta distance | degrees, average distances
+        self.detected_distance_line_ends = []
 
     def populate_angle_to_delta_distance(self):
         for i in range(len(self.atd)-1):
-            self.atdd.append(
+            self.atdd.append(round(
                 (self.atd[i-1][1] - self.atd[i+1][1])
                 /
                 (self.atd[i-1][0] - self.atd[i+1][0])
-            )
-        self.atdd.append(
+            ))
+        self.atdd.append(round(
             (self.atd[-2][1] - self.atd[0][1])
             /
             (self.atd[-2][0] - self.atd[0][0])
-        )
+        ))
 
     def find_opponent(self):
         opponent_list = []
@@ -57,9 +58,9 @@ class AutoMelty(Robot):
         self.desired_direction = shortened_list[len(shortened_list)//2][0]
 
     def populate_angle_to_weighted_average_distance(self):
-        for i in range(len(self.atd)):
+        for i in range(len(self.atd)): #this logic is cooked
             for j in range(len(self.atd)):
-                self.atwad.append(sum(map(lambda s: (1 / max(0.1,abs(i-j))) * self.atd[j], self.atd)))
+                self.atwad.append(sum(map(lambda s: (1 / max(0.1,abs(i-j))) * self.atd[j][1], self.atd)))
 
     def get_distance(self):
         other_robot = [robot for robot in Robot.robots if robot is not self][0]
@@ -68,16 +69,14 @@ class AutoMelty(Robot):
             current_rect = pygame.Rect(pos[0], pos[1], 1, 1)
             
             if other_robot.rect.colliderect(current_rect) or not Arena.rect.colliderect(current_rect):
-                print(not Arena.rect.colliderect(current_rect))
-                print(other_robot.rect.colliderect(current_rect))
-                print(current_rect)
+                self.detected_distance_line_ends.append((pos[0], pos[1]))
                 return d
         return d
 
     def update_desired_direction(self):
         if self.agro:
             self.populate_angle_to_delta_distance()
-            print("atd", self.atd)
+            print("atd", [a[1] for a in self.atd])
             print("atdd", self.atdd)
             self.find_opponent()
         else:
@@ -87,6 +86,7 @@ class AutoMelty(Robot):
         self.atd = []
         self.atdd = []
         self.atwad = []
+        self.detected_distance_line_ends = []
 
     def update(self):
         self.poll_count += 1
@@ -95,9 +95,7 @@ class AutoMelty(Robot):
         if self.poll_count == 0:
             self.atd.append((self.curr_heading, self.get_distance()))
     
-        
-
-        if self.curr_heading > 360:
+        if self.curr_heading >= 360:
             self.update_desired_direction()
 
         total_positional_accel = [self.accel * math.cos(math.radians(self.desired_direction)), self.accel * -math.sin(math.radians(self.desired_direction))]
@@ -105,5 +103,9 @@ class AutoMelty(Robot):
 
     def draw(self, surface):
         super().draw(surface)
+
+        for line_end in self.detected_distance_line_ends:
+            pygame.draw.line(surface, pygame.Color(0, 0, 255), self.rect.center, line_end)
+
         if self.should_draw_desired_heading:
             self.draw_line_at_angle(surface, self.desired_direction, self.HEADING_LINE_LENGTH, pygame.Color(0, 255, 0))

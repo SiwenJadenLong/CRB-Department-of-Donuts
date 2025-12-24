@@ -14,7 +14,7 @@ clock = pygame.time.Clock()
 running = True
 arena = Arena(screen, 20)
 robot = ControlledNormalBot(pygame.K_w, pygame.K_s, pygame.K_a, pygame.K_d, 100, 2000, pygame.Rect(500, 500, 100, 100), should_draw_heading=True)
-auto_melty = AutoMelty(25, 2500, 1, True, 10,  pygame.Rect(100, 100, 100, 100), should_draw_heading=True, should_draw_desired_heading=True)
+auto_melty = AutoMelty(25, 1000, 1, True, 10,  pygame.Rect(100, 100, 100, 100), should_draw_heading=True, should_draw_desired_heading=True)
  
 while running:
     for event in pygame.event.get():
