@@ -2,6 +2,7 @@ import pygame
 
 class Arena():
     def __init__(self, surface, offset_from_border):
+        Arena.offset_from_border = offset_from_border
         width = surface.get_width() - offset_from_border
         height = surface.get_height() - offset_from_border
         Arena.rect = pygame.Rect(surface.get_width()//2 - (width)//2, surface.get_height()//2 - (height)//2, width, height)

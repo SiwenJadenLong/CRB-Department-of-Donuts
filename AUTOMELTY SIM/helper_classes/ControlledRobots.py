@@ -13,7 +13,7 @@ class ControlledRobot(Robot):
         self.ang_accel = ang_accel
 
 class ControlledMelty(ControlledRobot):
-    def update(self, pressed_keys):
+    def update(self, pressed_keys, delta_time):
         total_positional_accel = [0, 0]
         if pressed_keys[self.FORWARD_KEY]:
             total_positional_accel[1] -= self.accel
@@ -27,10 +27,10 @@ class ControlledMelty(ControlledRobot):
         if pressed_keys[self.RIGHT_KEY]:
             total_positional_accel[0] += self.accel
         
-        super().update(total_positional_accel, self.ang_accel)
+        super().update(total_positional_accel, self.ang_accel, delta_time)
 
 class ControlledNormalBot(ControlledRobot):
-    def update(self, pressed_keys):
+    def update(self, pressed_keys, delta_time):
         total_positional_accel = 0
         total_rotational_accel = 0
         if pressed_keys[self.FORWARD_KEY]:
@@ -46,4 +46,4 @@ class ControlledNormalBot(ControlledRobot):
             total_rotational_accel -= self.ang_accel
         
         total_positional_accel = [total_positional_accel * math.cos(math.radians(self.curr_heading)), total_positional_accel * -math.sin(math.radians(self.curr_heading))]
-        super().update(total_positional_accel, total_rotational_accel)
+        super().update(total_positional_accel, total_rotational_accel, delta_time)

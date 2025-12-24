@@ -1,3 +1,4 @@
+from helper_classes.Arena import Arena
 import pygame
 import math
 
@@ -32,14 +33,15 @@ class Robot:
                         self.rect.center[1] + length * -math.sin(math.radians(angle)))
         pygame.draw.line(surface, color, self.rect.center, line_end_pos, 5)
 
-    def update(self, accel, angular_accel):
-        self.vel[0] += accel[0] / Robot.ACCEL_REDUCTION
-        self.vel[1] += accel[1] / Robot.ACCEL_REDUCTION
-        self.rect.center = (self.rect.center[0] + self.vel[0], self.rect.center[1] + self.vel[1])
+    def update(self, accel, angular_accel, delta_time):
+        self.vel[0] += accel[0]*delta_time / Robot.ACCEL_REDUCTION
+        self.vel[1] += accel[1]*delta_time / Robot.ACCEL_REDUCTION
+        self.rect.center = (min(Arena.rect.width-self.rect.width//2, max(Arena.offset_from_border + self.rect.width//2, self.rect.center[0] + self.vel[0])), 
+                            min(Arena.rect.height-self.rect.height//2, max(Arena.offset_from_border + self.rect.height//2, self.rect.center[1] + self.vel[1])))
         self.vel[0] *= Robot.VEL_LOSS
         self.vel[1] *= Robot.VEL_LOSS
 
-        self.ang_vel += angular_accel / Robot.ANG_ACCEL_REDUCTION
+        self.ang_vel += angular_accel*delta_time / Robot.ANG_ACCEL_REDUCTION
         self.ang_vel *= Robot.ANG_VEL_LOSS
         
         self.curr_heading %= 360
