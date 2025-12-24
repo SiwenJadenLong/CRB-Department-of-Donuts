@@ -37,22 +37,10 @@ class AutoMelty(Robot):
         
         return index_of_largest_angle_change, index_of_second_largest_angle_change, desired_direction
 
-    def populate_angle_to_weighted_average_distance(self): #this is probably not giving the right numbers 
-        begin, end, _ = self.find_opponent()
-        def get_weighted_value(j):
-            multiplier = 1
-            if self.atd[0] in range(begin, end):
-                multiplier = 10
-            value = (1 / (max(0.1,abs(i-j))*multiplier)) * self.atd[j][1] #this just doesn't work
-            return value
+    def run_away_from_opponent(self): #work on this another day, basically try to always run away from opponent while staying a decent way away from walls
+        _, _, opponent_direction = self.find_opponent()
 
-        for i in range(len(self.atd)):
-            self.atwad.append((self.atd[i][0], sum(map(get_weighted_value, range(len(self.atd))))))
-
-    def run_away_from_opponent(self):
-        
-        max_pair = max(self.atd, key=lambda s: s[1])
-        self.desired_direction = max_pair[0]
+        self.desired_direction = -opponent_direction
 
     def get_distance(self):
         other_robot = [robot for robot in Robot.robots if robot is not self][0]
