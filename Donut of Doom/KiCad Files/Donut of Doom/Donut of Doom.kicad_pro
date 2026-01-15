@@ -525,7 +525,7 @@
       "plot": "Exports/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Exports/Donut of Doom v1.step",
       "svg": "",
       "vrml": ""
     },
@@ -648,6 +648,10 @@
     [
       "f9c3bb91-9ef9-468e-b931-f1acff0425cb",
       "Root"
+    ],
+    [
+      "4270f581-8b9c-447f-b10b-3fe878e4d07b",
+      "H3LIS331 Components"
     ]
   ],
   "text_variables": {}
