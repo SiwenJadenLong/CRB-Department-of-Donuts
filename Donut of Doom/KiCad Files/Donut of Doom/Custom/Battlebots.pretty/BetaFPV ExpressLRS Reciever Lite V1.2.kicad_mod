@@ -208,7 +208,39 @@
 		)
 		(polygon
 			(pts
-				(xy -6.7 -7) (xy 6.6 -7) (xy 6.598322 3) (xy -6.7 3)
+				(xy -6.7 -7) (xy 6.6 -7) (xy 6.598993 -1) (xy -6.7 -1)
+			)
+		)
+	)
+	(zone
+		(net 0)
+		(net_name "")
+		(layer "B.Cu")
+		(uuid "b7f9e4e4-87c0-48de-a7e2-04f1739d63dc")
+		(hatch full 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(filled_areas_thickness no)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads not_allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+		)
+		(polygon
+			(pts
+				(xy -6.7 -7) (xy 6.6 -7) (xy 6.598993 -1) (xy -6.7 -1)
 			)
 		)
 	)
