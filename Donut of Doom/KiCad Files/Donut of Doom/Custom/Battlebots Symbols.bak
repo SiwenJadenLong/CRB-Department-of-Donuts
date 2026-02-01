@@ -563,7 +563,7 @@
 			(pin input line
 				(at -15.24 13.97 0)
 				(length 2.54)
-				(name "GND"
+				(name "SCL/SCLK"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -581,7 +581,7 @@
 			(pin input line
 				(at -15.24 10.16 0)
 				(length 2.54)
-				(name "SCL/SCLK"
+				(name "SDA/SDI"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -599,7 +599,7 @@
 			(pin input line
 				(at -15.24 6.35 0)
 				(length 2.54)
-				(name "SDA/SDI"
+				(name "NCS"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -617,7 +617,7 @@
 			(pin input line
 				(at -15.24 2.54 0)
 				(length 2.54)
-				(name "NCS"
+				(name "ADO/SDO"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -635,7 +635,7 @@
 			(pin input line
 				(at -15.24 -1.27 0)
 				(length 2.54)
-				(name "ADO/SDO"
+				(name "INT"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -653,7 +653,7 @@
 			(pin input line
 				(at -15.24 -5.08 0)
 				(length 2.54)
-				(name "INT"
+				(name "FSY/FSYNC"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -671,7 +671,7 @@
 			(pin input line
 				(at -15.24 -8.89 0)
 				(length 2.54)
-				(name "FSY/FSYNC"
+				(name "ACL/AUX-CL"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -689,7 +689,7 @@
 			(pin input line
 				(at -15.24 -12.7 0)
 				(length 2.54)
-				(name "ACL/AUX-CL"
+				(name "ADA/AUX-DA"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -707,7 +707,7 @@
 			(pin input line
 				(at -15.24 -16.51 0)
 				(length 2.54)
-				(name "ADA/AUX-DA"
+				(name "GND"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -715,6 +715,116 @@
 					)
 				)
 				(number ""
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
+	(symbol "ESC Signal"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "ESC"
+			(at 2.032 -4.318 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(symbol "ESC Signal_0_1"
+			(rectangle
+				(start -3.81 2.54)
+				(end 3.81 -2.54)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+		)
+		(symbol "ESC Signal_1_0"
+			(pin input line
+				(at -6.35 1.27 0)
+				(length 2.54)
+				(name "Signal"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+		(symbol "ESC Signal_1_1"
+			(text "ESC Signal"
+				(at 0 4.826 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(pin power_in line
+				(at -6.35 -1.27 0)
+				(length 2.54)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
 					(effects
 						(font
 							(size 1.27 1.27)

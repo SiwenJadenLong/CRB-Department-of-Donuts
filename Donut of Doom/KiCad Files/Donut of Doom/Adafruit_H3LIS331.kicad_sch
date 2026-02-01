@@ -1237,6 +1237,16 @@
 	)
 	(wire
 		(pts
+			(xy 64.77 99.06) (xy 83.82 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1537f70c-59f9-4f9b-aba8-22e3118bef59")
+	)
+	(wire
+		(pts
 			(xy 121.92 111.76) (xy 121.92 114.3)
 		)
 		(stroke
@@ -1264,6 +1274,16 @@
 			(type default)
 		)
 		(uuid "2c009da1-1817-4f57-ac48-d11500135c1c")
+	)
+	(wire
+		(pts
+			(xy 64.77 96.52) (xy 83.82 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34581b7d-52d6-4db1-825f-7994f5ffdfcf")
 	)
 	(wire
 		(pts
@@ -1314,16 +1334,6 @@
 			(type default)
 		)
 		(uuid "42191643-35f6-4491-ac34-f8a89a377d96")
-	)
-	(wire
-		(pts
-			(xy 73.66 96.52) (xy 83.82 96.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "692bf170-874f-4cde-9f28-54969271f0ce")
 	)
 	(wire
 		(pts
@@ -1468,16 +1478,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 99.06) (xy 83.82 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8e39de0-07a9-499a-bc60-dd07b5856e31")
-	)
-	(wire
-		(pts
 			(xy 59.69 106.68) (xy 83.82 106.68)
 		)
 		(stroke
@@ -1588,7 +1588,7 @@
 		(uuid "10feff00-f570-4c53-b586-1ae7944360f1")
 	)
 	(label "SDA"
-		(at 73.66 99.06 180)
+		(at 64.77 99.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1598,7 +1598,7 @@
 		(uuid "141b7261-5fcc-4636-bfbc-28da4da94bf1")
 	)
 	(label "SCL"
-		(at 73.66 96.52 180)
+		(at 64.77 96.52 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2273,7 +2273,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_1.5x1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 138.43 106.68 0)
 			(effects
 				(font
@@ -2628,7 +2628,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_1.5x1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
 			(at 129.54 104.14 0)
 			(effects
 				(font
