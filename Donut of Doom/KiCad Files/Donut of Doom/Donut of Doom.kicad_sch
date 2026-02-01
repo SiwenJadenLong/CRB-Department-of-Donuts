@@ -3282,6 +3282,12 @@
 		(uuid "308765ac-dfed-42e2-8af1-c5ad4d0f355f")
 	)
 	(junction
+		(at 180.34 201.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "34e7f55d-4760-4d78-a4e3-9d15cc77a38b")
+	)
+	(junction
 		(at 168.91 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -16391,6 +16397,73 @@
 			(project "Donut of Doom"
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint_Small")
+		(at 180.34 201.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "df8600cc-7668-400d-82cd-6a6c9f126a06")
+		(property "Reference" "EX8"
+			(at 181.61 200.6599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 181.61 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Battlebots:Pico_pth_GND"
+			(at 185.42 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 185.42 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Pad Breakout"
+			(at 180.34 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ba6e07b5-097e-4634-9d03-1e7809c4ba8b")
+		)
+		(instances
+			(project "Donut of Doom"
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb"
+					(reference "EX8")
 					(unit 1)
 				)
 			)
