@@ -4,4 +4,5 @@
   (lib (name "Battlebots")(type "KiCad")(uri "${KIPRJMOD}/Custom/Battlebots.pretty")(options "")(descr ""))
   (lib (name "adafruit_h3lis331")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/adafruit_h3lis331")(options "")(descr ""))
   (lib (name "TL3365AF180QG")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/TL3365AF180QG")(options "")(descr ""))
+  (lib (name "ul_BM02B-GHS-TBT")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/ul_BM02B-GHS-TBT/KiCADv6/footprints.pretty")(options "")(descr ""))
 )

@@ -1,4 +1,4 @@
-27515181092200810
+27516982597077893
 10118192_0002LF
 AMPHENOL_10118192-0002LF
 
@@ -447,6 +447,13 @@ Pico_pth_pad
 0
 1
 1
+Battlebots
+SGP1610N2
+
+
+0
+2
+2
 Button_Switch_Keyboard
 SW_Cherry_MX_1.00u_PCB
 Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf

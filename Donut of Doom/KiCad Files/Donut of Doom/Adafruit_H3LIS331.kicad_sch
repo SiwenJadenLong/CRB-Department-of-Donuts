@@ -5,113 +5,6 @@
 	(uuid "a4efc2e3-5a00-40f0-b004-3dca527cd688")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector:TestPoint"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.762)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "test point"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:C_Small_US"
 			(pin_numbers
 				(hide yes)
@@ -1257,16 +1150,6 @@
 	)
 	(wire
 		(pts
-			(xy 119.38 104.14) (xy 124.46 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c9df4a5-9aa1-4352-8652-8e7191150c3a")
-	)
-	(wire
-		(pts
 			(xy 119.38 114.3) (xy 121.92 114.3)
 		)
 		(stroke
@@ -1337,6 +1220,26 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 67.31) (xy 161.29 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4574118b-49cb-40e6-a8ac-18d63afde903")
+	)
+	(wire
+		(pts
+			(xy 119.38 104.14) (xy 123.19 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "48202475-4800-4479-a565-1033cb5b5e90")
+	)
+	(wire
+		(pts
 			(xy 167.64 97.79) (xy 177.8 97.79)
 		)
 		(stroke
@@ -1354,6 +1257,16 @@
 			(type default)
 		)
 		(uuid "789d90a6-df7c-412c-9c46-3f0293f3898b")
+	)
+	(wire
+		(pts
+			(xy 119.38 106.68) (xy 123.19 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "791c0015-077d-4741-978b-580a5ab8f817")
 	)
 	(wire
 		(pts
@@ -1488,6 +1401,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 71.12) (xy 161.29 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce50c3f0-c8d7-4b2b-b24a-8f2edd2da616")
+	)
+	(wire
+		(pts
 			(xy 123.19 93.98) (xy 119.38 93.98)
 		)
 		(stroke
@@ -1505,16 +1428,6 @@
 			(type default)
 		)
 		(uuid "dc3f92f9-9a87-4115-9a94-7b0e4f2d28e6")
-	)
-	(wire
-		(pts
-			(xy 119.38 106.68) (xy 133.35 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "de581960-9f55-48f9-8a2e-f645dc498749")
 	)
 	(wire
 		(pts
@@ -1567,6 +1480,16 @@
 		)
 		(uuid "fb8adb6b-741d-4222-a8a0-660d33fa083d")
 	)
+	(label "INT1"
+		(at 123.19 104.14 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "01b19a6e-fb4e-47d7-90a9-f7a42651a03d")
+	)
 	(label "SDA"
 		(at 161.29 78.74 0)
 		(effects
@@ -1597,6 +1520,36 @@
 		)
 		(uuid "141b7261-5fcc-4636-bfbc-28da4da94bf1")
 	)
+	(label "INT2"
+		(at 123.19 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7bddcdaf-727b-421a-962f-c6ffb2ff634a")
+	)
+	(label "INT2"
+		(at 161.29 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "926e7544-71c0-4587-a822-2b295569c437")
+	)
+	(label "INT1"
+		(at 161.29 67.31 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "abb2ddad-1867-43bf-9a7a-39845e9dbe29")
+	)
 	(label "SCL"
 		(at 64.77 96.52 180)
 		(effects
@@ -1618,6 +1571,17 @@
 		)
 		(uuid "7bbea36c-9ea6-46bf-ad35-bf669363a005")
 	)
+	(hierarchical_label "INT2"
+		(shape output)
+		(at 157.48 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8f66c9ce-9003-4393-b7a4-f78079abbdc5")
+	)
 	(hierarchical_label "SDA"
 		(shape output)
 		(at 157.48 78.74 180)
@@ -1629,6 +1593,17 @@
 		)
 		(uuid "d62886a0-d0c9-4e02-b68f-409460b64ec4")
 	)
+	(hierarchical_label "INT1"
+		(shape output)
+		(at 157.48 67.31 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "eee1c5af-9a10-42f7-8d16-19180ba6d4bf")
+	)
 	(symbol
 		(lib_id "power:GND")
 		(at 144.78 123.19 0)
@@ -1639,7 +1614,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0de1f224-f7c1-44e7-a0b6-f75fa905abec")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR025"
 			(at 144.78 129.54 0)
 			(effects
 				(font
@@ -1684,12 +1659,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "cb5b166b-8dd0-4127-9dee-0e809251ecd9")
+			(uuid "7aa106ca-0bae-4562-b647-778e2a8e9e65")
 		)
 		(instances
 			(project "Donut of Doom"
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "#PWR028")
+					(reference "#PWR025")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -1705,7 +1684,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1c86d08a-c913-4b07-8850-fbe6c2ca6c63")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR021"
 			(at 69.85 118.11 0)
 			(effects
 				(font
@@ -1750,12 +1729,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "3709fefd-2ded-484d-8e3e-50ff31dd9e0e")
+			(uuid "7de8f82d-fa88-4c52-b95a-571034acc30c")
 		)
 		(instances
 			(project "Donut of Doom"
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "#PWR024")
+					(reference "#PWR021")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -1771,7 +1754,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1f75fc45-fc8c-47c3-ac61-4147f560ee62")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR022"
 			(at 121.92 129.54 0)
 			(effects
 				(font
@@ -1816,12 +1799,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "ec4b3661-dbff-440c-8b5d-9fc65f8d1384")
+			(uuid "97c21fac-d151-4116-86aa-b06bc530e6eb")
 		)
 		(instances
 			(project ""
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "#PWR025")
+					(reference "#PWR022")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -1837,7 +1824,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "238c65ec-eef9-4215-b1d9-ab04daa09539")
-		(property "Reference" "#PWR029"
+		(property "Reference" "#PWR026"
 			(at 167.64 93.98 0)
 			(effects
 				(font
@@ -1882,12 +1869,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "e22ff628-1b1c-41f5-ba11-a5755184bf6e")
+			(uuid "8c9f7858-4e45-4b57-8460-18e190567a80")
 		)
 		(instances
 			(project "Donut of Doom"
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "#PWR029")
+					(reference "#PWR026")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -1902,7 +1893,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "46b413f4-5678-40a7-8416-2268d02c0b84")
-		(property "Reference" "R5"
+		(property "Reference" "R7"
 			(at 142.494 99.314 90)
 			(effects
 				(font
@@ -1946,15 +1937,19 @@
 			)
 		)
 		(pin "2"
-			(uuid "f06949c7-40d7-489a-bceb-46d157aedd87")
+			(uuid "4d146251-7c46-4f5a-9d78-e99b0dde84bc")
 		)
 		(pin "1"
-			(uuid "0030ef4c-a2d2-4e99-bbd3-63d46f1a5e7b")
+			(uuid "e73e0638-0ea4-48c9-a071-6122bc46b49e")
 		)
 		(instances
 			(project "Donut of Doom"
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "R5")
+					(reference "R7")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -2016,15 +2011,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "181d5e08-9bf5-453f-9b73-19a5ac5416a4")
+			(uuid "c96311f6-c343-484f-ba16-dfe8afe1696c")
 		)
 		(pin "2"
-			(uuid "bc63513a-1758-4ab9-be14-02d94252048e")
+			(uuid "bad4985c-02bf-42fb-b9ff-6ed811f8b7f1")
 		)
 		(instances
 			(project "Donut of Doom"
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
 					(reference "C2")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -2040,7 +2039,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5c7f6c2a-1ae3-4370-9c30-f260122c4555")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR023"
 			(at 123.19 93.98 0)
 			(effects
 				(font
@@ -2085,12 +2084,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "bc56e258-b7dd-488e-a3ca-d90450f27c24")
+			(uuid "a10093f8-192e-4214-a3e4-9c29f75b4764")
 		)
 		(instances
 			(project "Donut of Doom"
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "#PWR026")
+					(reference "#PWR023")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -2152,15 +2155,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "bda1b7dc-38ca-419b-a760-fc89c4eae554")
+			(uuid "ff066616-2d99-4194-ab78-657813363ff7")
 		)
 		(pin "2"
-			(uuid "9185bd6d-948f-40fe-9da8-d944e649c1c9")
+			(uuid "39dbd856-bf66-40ef-a7ad-1d00bd79eaf3")
 		)
 		(instances
 			(project ""
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
 					(reference "C1")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -2176,7 +2183,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "831ba36f-0144-4e94-946f-2334d79952e4")
-		(property "Reference" "D5"
+		(property "Reference" "D6"
 			(at 148.59 109.5374 90)
 			(effects
 				(font
@@ -2231,82 +2238,19 @@
 			)
 		)
 		(pin "2"
-			(uuid "de28f0a5-bee9-4d4f-864b-c1435ae6b72e")
+			(uuid "50751916-5b2c-41a2-97ad-f7720a04d5e7")
 		)
 		(pin "1"
-			(uuid "5068fa9c-bb22-46f1-a928-839f83893442")
+			(uuid "163dfb7c-963b-4df0-b2b1-ac8d7b61a2ff")
 		)
 		(instances
 			(project ""
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "D5")
+					(reference "D6")
 					(unit 1)
 				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 133.35 106.68 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9ef15abd-2791-4799-8b91-67d349aa4d58")
-		(property "Reference" "TP2"
-			(at 135.89 102.1079 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "INT2"
-			(at 135.89 104.6479 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
-			(at 138.43 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 138.43 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 133.35 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "35bcf249-a820-4986-8433-45c8f28220aa")
-		)
-		(instances
-			(project ""
-				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "TP2")
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "D7")
 					(unit 1)
 				)
 			)
@@ -2417,51 +2361,55 @@
 			)
 		)
 		(pin "1"
-			(uuid "48a2d496-a0d1-4277-865d-92e2e30674da")
+			(uuid "1defd466-8026-43a4-8472-dc74ebee2438")
 		)
 		(pin "10"
-			(uuid "814ade85-1bf9-4a98-a241-8de2675a6f6b")
+			(uuid "55521165-91b5-48b2-af89-76a04069d856")
 		)
 		(pin "8"
-			(uuid "c9b33adb-c184-4b62-84fe-14d3189a4190")
+			(uuid "995a1921-f199-432f-8b8f-76229839b408")
 		)
 		(pin "16"
-			(uuid "59d879f9-791d-46c8-9b41-dfbaaca33a35")
+			(uuid "1297f5f8-7e5d-4875-a6e2-fd31f93ccf33")
 		)
 		(pin "15"
-			(uuid "230b44b7-c897-49d4-aa6b-ff97a08df7b8")
+			(uuid "69d05825-f7c0-490e-896b-27a64de66129")
 		)
 		(pin "13"
-			(uuid "7a0cc4a2-1900-46af-846c-82af891cce24")
+			(uuid "2773269c-2e72-4e6c-a7e4-1a742d90428a")
 		)
 		(pin "9"
-			(uuid "37d61c0e-7efb-4021-a66d-b8a5cde0f85d")
+			(uuid "7cac8c8c-0227-4dba-9b05-bcb17a524c5a")
 		)
 		(pin "7"
-			(uuid "cc5bf81d-cda4-418f-ba4b-88a0cca72915")
+			(uuid "0c5e757c-1fbd-491a-8315-09fa683a2983")
 		)
 		(pin "14"
-			(uuid "a8708f34-f90f-4a9c-9365-15200d95341a")
+			(uuid "d0dd1807-90d4-44a1-b971-7bfd63ca40c7")
 		)
 		(pin "12"
-			(uuid "a7e4a70f-625b-46ae-b81a-939dc1085e1c")
+			(uuid "83140c53-aa57-48bb-913d-2c08f7065369")
 		)
 		(pin "11"
-			(uuid "e85194d5-b6d1-4000-b688-020e775d8949")
+			(uuid "f77a94a5-8b37-4e34-82e7-f5b58f71691b")
 		)
 		(pin "4"
-			(uuid "d6c47e8b-9606-4590-8c11-74098875e696")
+			(uuid "87158adf-65fc-4e91-8067-3351e251504e")
 		)
 		(pin "6"
-			(uuid "35d8b28d-fb0c-42dd-9dc2-9dc3542e1b4d")
+			(uuid "6581417f-ef9d-443d-8ed8-72da0a95cd78")
 		)
 		(pin "5"
-			(uuid "52a3b3ca-d1a5-4560-8f33-54f3df76a195")
+			(uuid "2cc78a21-0298-4dff-bfe4-69f85e7d0b13")
 		)
 		(instances
 			(project ""
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
 					(reference "U3")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -2476,7 +2424,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c274f6c3-6b44-415b-9b1a-d8ff99bea1bb")
-		(property "Reference" "R4"
+		(property "Reference" "R6"
 			(at 73.406 101.854 90)
 			(effects
 				(font
@@ -2520,15 +2468,19 @@
 			)
 		)
 		(pin "2"
-			(uuid "951c2cfa-c91b-4d21-8f31-f7a49390cd9b")
+			(uuid "33a3c24c-0ae6-49ae-8b1b-bdc02c2d2931")
 		)
 		(pin "1"
-			(uuid "2a1cd3c5-21b1-4c56-9f28-6c8ec3c402d1")
+			(uuid "1ad1518e-8c7e-49d4-a941-862651cd22f8")
 		)
 		(instances
 			(project ""
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "R4")
+					(reference "R6")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -2544,7 +2496,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c4f39ae2-0233-4aad-80ce-66b3c945cd7e")
-		(property "Reference" "#PWR030"
+		(property "Reference" "#PWR027"
 			(at 167.64 106.68 0)
 			(effects
 				(font
@@ -2589,79 +2541,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "d9b734b0-0b82-42b1-8448-ea13bc717ecf")
+			(uuid "cddf42a4-6377-49c4-89e9-b6154a41309f")
 		)
 		(instances
 			(project "Donut of Doom"
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "#PWR030")
+					(reference "#PWR027")
 					(unit 1)
 				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 124.46 104.14 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e856c3c4-a58a-45bb-a7ad-d781e43a2d13")
-		(property "Reference" "TP1"
-			(at 127 99.5679 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "INT1"
-			(at 127 102.1079 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
-			(at 129.54 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 129.54 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 124.46 104.14 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0b2f1bec-6074-4362-9906-1cbfef5edb6a")
-		)
-		(instances
-			(project "Donut of Doom"
-				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "TP1")
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -2677,7 +2566,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f4373012-6cef-425c-91c1-e27b6e35207b")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR020"
 			(at 59.69 91.44 0)
 			(effects
 				(font
@@ -2722,12 +2611,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "0063009c-362c-4791-baf9-cb595d01a651")
+			(uuid "ee6360de-b772-4462-ace8-4e6647692acb")
 		)
 		(instances
 			(project ""
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "#PWR023")
+					(reference "#PWR020")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -2743,7 +2636,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "faf06b21-b8b5-4f69-ab1f-1c83915098eb")
-		(property "Reference" "#PWR027"
+		(property "Reference" "#PWR024"
 			(at 144.78 93.98 0)
 			(effects
 				(font
@@ -2788,12 +2681,16 @@
 			)
 		)
 		(pin "1"
-			(uuid "6f4eef05-b30b-4dd7-b161-2a2d8f4bca4c")
+			(uuid "747069b9-e0d3-4743-bf79-1459315936e8")
 		)
 		(instances
 			(project "Donut of Doom"
 				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/4270f581-8b9c-447f-b10b-3fe878e4d07b"
-					(reference "#PWR027")
+					(reference "#PWR024")
+					(unit 1)
+				)
+				(path "/f9c3bb91-9ef9-468e-b931-f1acff0425cb/cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c"
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)

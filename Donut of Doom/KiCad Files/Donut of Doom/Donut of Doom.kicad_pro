@@ -651,7 +651,11 @@
     ],
     [
       "4270f581-8b9c-447f-b10b-3fe878e4d07b",
-      "H3LIS331 Components"
+      "H3LIS331 upper"
+    ],
+    [
+      "cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c",
+      "H3LIS331 lower (page 3)"
     ]
   ],
   "text_variables": {}

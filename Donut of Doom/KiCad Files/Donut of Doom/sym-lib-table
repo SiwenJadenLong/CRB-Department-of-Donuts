@@ -4,4 +4,5 @@
   (lib (name "MCU_Module_RaspberryPi_Pico")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/RaspberryPi_Pico/MCU_Module_RaspberryPi_Pico.kicad_sym")(options "")(descr ""))
   (lib (name "adafruit_h3lis331")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/adafruit_h3lis331/adafruit_h3lis331.kicad_sym")(options "")(descr ""))
   (lib (name "H3LIS331DLTR")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/H3LIS331DLTR/H3LIS331DLTR.kicad_sym")(options "")(descr ""))
+  (lib (name "BM02B-GHS-TBT")(type "KiCad")(uri "${KIPRJMOD}/Downloaded Libraries/ul_BM02B-GHS-TBT/KiCADv6/2026-03-24_21-01-34.kicad_sym")(options "")(descr ""))
 )
