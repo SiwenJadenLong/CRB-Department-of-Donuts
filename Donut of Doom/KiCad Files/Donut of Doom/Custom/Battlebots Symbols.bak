@@ -745,7 +745,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Battlebots:2_2mmx1.5mm_smd_pad"
 			(at 0 0 0)
 			(effects
 				(font

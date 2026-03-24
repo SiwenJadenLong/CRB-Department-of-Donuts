@@ -806,7 +806,7 @@
 			)
 		)
 		(symbol "ESC Signal_1_1"
-			(text "ESC Signal"
+			(text "ESC Signal Pads\n"
 				(at 0 4.826 0)
 				(effects
 					(font
