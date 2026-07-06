@@ -561,7 +561,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "Exports/V4/",
+      "plot": "Exports/V4.1.1/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "Exports/Donut of Doom v1.step",
@@ -638,12 +638,60 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "MF",
+          "name": "MF",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MP",
+          "name": "MP",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PACKAGE",
+          "name": "PACKAGE",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "PRICE",
+          "name": "PRICE",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "AVAILABILITY",
+          "name": "AVAILABILITY",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -693,7 +741,7 @@
       {
         "filename": "Donut of Doom.kicad_sch",
         "name": "Donut of Doom",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "f9c3bb91-9ef9-468e-b931-f1acff0425cb"
       }
     ],
     "used_designators": "",
@@ -702,11 +750,15 @@
   "sheets": [
     [
       "f9c3bb91-9ef9-468e-b931-f1acff0425cb",
-      "Root"
+      "Donut of Doom"
     ],
     [
       "4270f581-8b9c-447f-b10b-3fe878e4d07b",
-      "H3LIS331 Components"
+      "H3LIS331 upper"
+    ],
+    [
+      "cddab5a4-ceef-4fe3-9ab4-95b0a4aef21c",
+      "H3LIS331 lower (page 3)"
     ]
   ],
   "text_variables": {},
